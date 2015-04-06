@@ -16,6 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'ervandew/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,6 +37,7 @@ set number
 set t_Co=256
 colorscheme jellybeans
 set expandtab
+set tabstop=2
 set wildmenu
 set incsearch
 set hlsearch
