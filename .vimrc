@@ -17,6 +17,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ervandew/supertab'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,3 +43,5 @@ set tabstop=2
 set wildmenu
 set incsearch
 set hlsearch
+let g:formatprg_c = "astyle"
+let g:formatprg_args_c = "--style=1tbs --indent=spaces=2"
