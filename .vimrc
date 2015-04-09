@@ -39,9 +39,11 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 set number
 set t_Co=256
+syntax enable
 colorscheme jellybeans
 set expandtab
 set tabstop=2
+set backspace=2
 set wildmenu
 set incsearch
 set hlsearch

@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 #if [ "$color_prompt" = yes ]; then
-        PS1="\[\e[00;37m\]\u@\h: \[\e[0m\]\[\e[00;36m\]\w\[\e[0m\]\[\e[00;37m\] \\$ \[\e[0m\]"
+        PS1="\[\e[00;37m\]\u: \[\e[0m\]\[\e[00;36m\]\w\[\e[0m\]\[\e[00;37m\] \\$ \[\e[0m\]"
 #else
 #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
@@ -76,32 +76,36 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias ls='ls -G'
+alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
-#directory colors
-LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
+#directory colors linux
+#LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -ACF'
-alias tmux='tmux -2'
+#FOR LINUX
+#alias ll='ls -alF'
+#alias la='ls -A'
+#alias l='ls -ACF'
+#FOR OSX
+alias ll='ls -GalF'
+alias la='ls -GA'
+alias l='ls -AGCF'
+
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+alias tmux='tmux -2'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
