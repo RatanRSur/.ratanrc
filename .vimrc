@@ -41,13 +41,13 @@ set number
 set t_Co=256
 syntax enable
 colorscheme jellybeans
+let g:formatprg_c = "astyle"
+let g:formatprg_args_c = "--style=1tbs --indent=spaces=2"
 set expandtab
 set tabstop=2
 set backspace=2
 set wildmenu
 set incsearch
 set hlsearch
-let g:formatprg_c = "astyle"
-let g:formatprg_args_c = "--style=1tbs --indent=spaces=2"
 nnoremap j gj
 nnoremap k gk
