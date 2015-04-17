@@ -21,13 +21,14 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
+Plugin 'reedes/vim-lexical'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
-filetype plugin indent on    " required
+"filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -51,3 +52,7 @@ set incsearch
 set hlsearch
 nnoremap j gj
 nnoremap k gk
+augroup lexical
+        autocmd!
+        autocmd FileType texcall lexical#init()
+augroup END"lexical stuff
