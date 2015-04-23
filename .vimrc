@@ -19,6 +19,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ervandew/supertab'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdcommenter'
+"Plugin 'powerline/powerline'
+Plugin 'powerline/fonts'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'reedes/vim-lexical'
@@ -26,9 +28,9 @@ Plugin 'reedes/vim-lexical'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
-"filetype plugin indent on    " required
+filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-filetype plugin on
+"filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -44,6 +46,7 @@ syntax enable
 colorscheme jellybeans
 let g:formatprg_c = "astyle"
 let g:formatprg_args_c = "--style=1tbs --indent=spaces=2"
+let g:airline_powerline_fonts = 1
 set expandtab
 set tabstop=2
 set backspace=2
@@ -52,7 +55,10 @@ set incsearch
 set hlsearch
 nnoremap j gj
 nnoremap k gk
+"lexical stuff
 augroup lexical
         autocmd!
-        autocmd FileType texcall lexical#init()
-augroup END"lexical stuff
+        autocmd FileType tex call lexical#init()
+        autocmd FileType txt call lexical#init()
+        autocmd FileType text call lexical#init({'spell':0})
+augroup END
