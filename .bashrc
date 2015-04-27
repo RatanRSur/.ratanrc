@@ -106,7 +106,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 alias tmux='tmux -2'
-alias brewup='brew update && brew upgrade'
+alias brewup='brew update && brew upgrade --all'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -130,4 +130,3 @@ source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
 #FUCK
 alias fuck='$(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
-alias cat='lolcat'

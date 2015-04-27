@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ervandew/supertab'
@@ -62,3 +63,4 @@ augroup lexical
         autocmd FileType txt call lexical#init()
         autocmd FileType text call lexical#init({'spell':0})
 augroup END
+let g:lexical#spell_key = '<leader>s'
