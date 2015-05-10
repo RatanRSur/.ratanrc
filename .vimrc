@@ -54,6 +54,7 @@ set backspace=2
 set wildmenu
 set incsearch
 set hlsearch
+set cm=blowfish2
 nnoremap j gj
 nnoremap k gk
 "lexical stuff
