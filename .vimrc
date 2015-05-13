@@ -25,6 +25,7 @@ Plugin 'powerline/fonts'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'reedes/vim-lexical'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,20 +42,25 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-set number
+" line number stuff
+set relativenumber
+"256 color terminal with syntax highlighting and colorscheme
 set t_Co=256
 syntax enable
 colorscheme jellybeans
+"code beautification
 let g:formatprg_c = "astyle"
 let g:formatprg_args_c = "--style=1tbs --indent=spaces=2"
+"airline stuff
 let g:airline_powerline_fonts = 1
 set expandtab
-set tabstop=2
+set tabstop=4
 set backspace=2
 set wildmenu
 set incsearch
 set hlsearch
-set cm=blowfish2
+"crypto
+set cm=blowfish2 
 nnoremap j gj
 nnoremap k gk
 "lexical stuff
