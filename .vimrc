@@ -49,8 +49,11 @@ set t_Co=256
 syntax enable
 colorscheme jellybeans
 "code beautification
-let g:formatprg_c = "astyle"
-let g:formatprg_args_c = "--style=1tbs --indent=spaces=2"
+let g:formatprg_cpp = "astyle"
+let g:formatprg_args_cpp = "--style=allman --indent=spaces=4 -xC80 -pHfxek3COj"
+"syntastic stuff
+let g:syntastic_cpp_compiler = 'clang'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 "airline stuff
 let g:airline_powerline_fonts = 1
 set expandtab
