@@ -15,7 +15,6 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ervandew/supertab'
 Plugin 'Chiel92/vim-autoformat'
@@ -44,20 +43,22 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " line number stuff
 set relativenumber
+set cursorline
 "256 color terminal with syntax highlighting and colorscheme
 set t_Co=256
 syntax enable
 colorscheme jellybeans
 "code beautification
+noremap <Leader>a :Autoformat<CR>
 let g:formatprg_cpp = "astyle"
-let g:formatprg_args_cpp = "--style=allman --indent=spaces=4 -xC80 -pHfxek3COj"
+let g:formatprg_args_cpp = "--style=1tbs --indent=spaces=8 -xGfpHUxek3W3jOocxyxC80"
 "syntastic stuff
 let g:syntastic_cpp_compiler = 'clang'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 "airline stuff
 let g:airline_powerline_fonts = 1
 set expandtab
-set tabstop=4
+set tabstop=8
 set backspace=2
 set wildmenu
 set incsearch
