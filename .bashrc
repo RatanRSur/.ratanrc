@@ -94,7 +94,7 @@ fi
 #alias la='ls -A'
 #alias l='ls -ACF'
 #FOR OSX
-alias ll='ls -GalF'
+alias ll='ls -GalFh'
 alias la='ls -GA'
 alias l='ls -AGCF'
 
