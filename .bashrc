@@ -106,7 +106,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 alias tmux='tmux -2'
-alias brewup='brew cask list | xargs brew cask install ; brew update -all && brew upgrade --all'
+alias brewup='brew update -all && brew upgrade --all ; brew cask list | xargs brew cask install'
 if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
 fi
@@ -131,7 +131,7 @@ source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
 alias fuck='$(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
 
-#alias for pdflatex compilation with entr
+#function for pdflatex compilation with entr
 latexedit()
 {
        ls "$1" | entr -c pdflatex --halt-on-error "$1"
