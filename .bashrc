@@ -57,7 +57,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 #if [ "$color_prompt" = yes ]; then
-PS1="\[\e[00;37m\]\u@\h: \[\e[0m\]\[\e[00;36m\]\w\[\e[0m\]\[\e[00;37m\] \\$ \[\e[0m\]"
+#PS1="\[\e[00;37m\]\u@\h: \[\e[0m\]\[\e[00;36m\]\w\[\e[0m\]\[\e[00;37m\] \\$ \[\e[0m\]"
+PS1="\[\033[38;5;208m\]\u@\h:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;208m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 #else
 #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
@@ -94,7 +95,7 @@ fi
 #alias la='ls -A'
 #alias l='ls -ACF'
 #FOR OSX
-alias ll='ls -GalFh'
+alias ll='ls -GAlFh'
 alias la='ls -GA'
 alias l='ls -AGCF'
 
@@ -106,10 +107,16 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 alias tmux='tmux -2'
-alias brewup='brew update -all && brew upgrade --all ; brew cask list | xargs brew cask install'
+alias brewup='brew update -all && brew upgrade --all ; brew cask list | parallel --will-cite brew cask install ; brew cleanup'
 if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
 fi
+
+function mkcd
+{
+        dir="$*";
+        mkdir -p "$dir" && cd "$dir";
+}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -134,5 +141,5 @@ alias FUCK='fuck'
 #function for pdflatex compilation with entr
 latexedit()
 {
-       ls "$1" | entr -c pdflatex --halt-on-error "$1"
+        ls "$1" | entr -c pdflatex --halt-on-error "$1"
 }

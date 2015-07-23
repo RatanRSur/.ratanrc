@@ -19,12 +19,12 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ervandew/supertab'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'powerline/powerline'
 Plugin 'powerline/fonts'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'reedes/vim-lexical'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'sjl/vitality.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,23 +48,31 @@ set cursorline
 set t_Co=256
 syntax enable
 colorscheme jellybeans
+"airline status bar
+:set laststatus=2
 "code beautification
 noremap <Leader>a :Autoformat<CR>
-let g:formatprg_cpp = "astyle"
-let g:formatprg_args_cpp = "--style=1tbs --indent=spaces=8 -xGfpHUxek3W3jOocxyxC80"
+let g:formatdef_cplusplus = "astyle --mode=cpp --style=1tbs --indent=spaces=8 -xGfpHUxek3W3jOocxyxC80"
+let g:formatters_cpp = ['cplusplus']
 "syntastic stuff
 let g:syntastic_cpp_compiler = 'clang'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options = ' -std=c++14 -stdlib=libc++'
 "airline stuff
 let g:airline_powerline_fonts = 1
+"8 spaces as a tab
 set expandtab
 set tabstop=8
+"backspace can go to previous line
 set backspace=2
 set wildmenu
 set incsearch
 set hlsearch
+set ignorecase
+"no sounds
+set noerrorbells
+set visualbell
 "crypto
-set cm=blowfish2 
+set cm=blowfish2
 nnoremap j gj
 nnoremap k gk
 "lexical stuff
@@ -75,3 +83,8 @@ augroup lexical
         autocmd FileType text call lexical#init({'spell':0})
 augroup END
 let g:lexical#spell_key = '<leader>s'
+:set nosmd   " short for 'showmode'
+:set noru    " short for 'ruler'
+"trailing whitespace
+match ErrorMsg '\s\+$'
+nnoremap <Leader>t :%s/\s\+$//e<CR>
