@@ -107,7 +107,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 alias tmux='tmux -2'
-alias brewup='brew update -all && brew upgrade --all ; brew cask list | parallel --will-cite brew cask install ; brew cleanup'
+alias brewup='brew update -all && brew upgrade --all ; brew cask list | xargs brew cask install ; brew cleanup'
 if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
 fi
