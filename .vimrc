@@ -41,9 +41,23 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" leader space
+let mapleader = "\<Space>"
+" remap save and quit and stuff
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader><Leader>q :q!<CR>
+nnoremap <Leader>x :x<CR>
+nnoremap <Leader>e :e<Space>
+nnoremap <Leader>sp :sp<Space>
+nnoremap <Leader>vsp :vsp<Space>
+"stop that stupid window from popping up
+map q: :q
 " line number stuff
 set relativenumber
 set cursorline
+"scrolloff
+:set scrolloff=5
 "256 color terminal with syntax highlighting and colorscheme
 set t_Co=256
 syntax enable
@@ -52,7 +66,7 @@ colorscheme jellybeans
 :set laststatus=2
 "code beautification
 noremap <Leader>a :Autoformat<CR>
-let g:formatdef_cplusplus = "astyle --mode=cpp --style=1tbs --indent=spaces=8 -xGfpHUxek3W3jOocxyxC80"
+let g:formatdef_cplusplus = '"astyle --mode=c --style=1tbs --indent=spaces=8 -xGfpHUxek3W3jOocxyxC80"'
 let g:formatters_cpp = ['cplusplus']
 "syntastic stuff
 let g:syntastic_cpp_compiler = 'clang'
@@ -62,17 +76,23 @@ let g:airline_powerline_fonts = 1
 "8 spaces as a tab
 set expandtab
 set tabstop=8
+"better breaking
+set breakindent
 "backspace can go to previous line
 set backspace=2
+"menu listing
 set wildmenu
+"search stuff
 set incsearch
 set hlsearch
 set ignorecase
+set smartcase
 "no sounds
 set noerrorbells
 set visualbell
 "crypto
 set cm=blowfish2
+"up/down plays nice with wrapped lines
 nnoremap j gj
 nnoremap k gk
 "lexical stuff
@@ -86,5 +106,4 @@ let g:lexical#spell_key = '<leader>s'
 :set nosmd   " short for 'showmode'
 :set noru    " short for 'ruler'
 "trailing whitespace
-match ErrorMsg '\s\+$'
-nnoremap <Leader>t :%s/\s\+$//e<CR>
+:nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> :w<CR>
