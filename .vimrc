@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'marciomazza/vim-brogrammer-theme'
 Plugin 'tpope/vim-surround'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'flazz/vim-colorschemes'
@@ -61,8 +62,11 @@ set incsearch
 set hlsearch
 "crypto
 set cm=blowfish2 
-nnoremap j gj
-nnoremap k gk
+nnoremap j h
+nnoremap k gj
+nnoremap l gk
+nnoremap ; l
+nnoremap h ;
 "lexical stuff
 augroup lexical
         autocmd!
