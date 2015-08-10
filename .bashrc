@@ -94,9 +94,15 @@ alias ll='ls --color=auto -alF'
 alias la='ls --color=auto -A'
 alias l='ls --color=auto -ACF'
 #FOR OSX
+<<<<<<< HEAD
 #alias ll='ls -GalF'
 #alias la='ls -GA'
 #alias l='ls -AGCF'
+=======
+alias ll='ls -GAlFh'
+alias la='ls -GA'
+alias l='ls -AGCF'
+>>>>>>> b8bf269b134909eaa1f01ea25c34762469ca1c3d
 
 
 
@@ -106,10 +112,20 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 alias tmux='tmux -2'
+<<<<<<< HEAD
 #alias brewup='brew cask list | xargs brew cask install ; brew update -all && brew upgrade --all'
+=======
+alias brewup='brew update -all && brew upgrade --all ; brew cask list | xargs brew cask install ; brew cleanup'
+>>>>>>> b8bf269b134909eaa1f01ea25c34762469ca1c3d
 if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
 fi
+
+function mkcd
+{
+        dir="$*";
+        mkdir -p "$dir" && cd "$dir";
+}
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -131,9 +147,9 @@ export PATH=/usr/local/bin:$PATH
 alias fuck='$(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
 
-#alias for pdflatex compilation with entr
+#function for pdflatex compilation with entr
 latexedit()
 {
-       ls "$1" | entr -c pdflatex --halt-on-error "$1"
+        ls "$1" | entr -c pdflatex --halt-on-error "$1"
 }
 source /usr/share/doc/pkgfile/command-not-found.bash
