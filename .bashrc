@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 #if [ "$color_prompt" = yes ]; then
-PS1="\[\e[00;37m\]\u: \[\e[0m\]\[\e[00;36m\]\w\[\e[0m\]\[\e[00;37m\] \\$ \[\e[0m\]"
+PS1="\[\e[00;37m\]\u@\h: \[\e[0m\]\[\e[00;36m\]\w\[\e[0m\]\[\e[00;37m\] \\$ \[\e[0m\]"
 #else
 #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
@@ -86,17 +86,17 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 #directory colors linux
-#LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
 
 # some more ls aliases
 #FOR LINUX
-#alias ll='ls -alF'
-#alias la='ls -A'
-#alias l='ls -ACF'
+alias ll='ls --color=auto -alF'
+alias la='ls --color=auto -A'
+alias l='ls --color=auto -ACF'
 #FOR OSX
-alias ll='ls -GalF'
-alias la='ls -GA'
-alias l='ls -AGCF'
+#alias ll='ls -GalF'
+#alias la='ls -GA'
+#alias l='ls -AGCF'
 
 
 
@@ -106,7 +106,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 alias tmux='tmux -2'
-alias brewup='brew cask list | xargs brew cask install ; brew update -all && brew upgrade --all'
+#alias brewup='brew cask list | xargs brew cask install ; brew update -all && brew upgrade --all'
 if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
 fi
@@ -125,7 +125,7 @@ export PATH=/usr/local/bin:$PATH
 
 
 #brew tab autocompletion
-source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
+#source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
 
 #FUCK
 alias fuck='$(thefuck $(fc -ln -1))'
@@ -136,3 +136,4 @@ latexedit()
 {
        ls "$1" | entr -c pdflatex --halt-on-error "$1"
 }
+source /usr/share/doc/pkgfile/command-not-found.bash
