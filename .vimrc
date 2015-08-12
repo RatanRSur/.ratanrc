@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'marciomazza/vim-brogrammer-theme'
 Plugin 'tpope/vim-surround'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ervandew/supertab'
@@ -91,9 +92,13 @@ set smartcase
 "no sounds
 set noerrorbells
 set visualbell
-"up/down plays nice with wrapped lines
-nnoremap j gj
-nnoremap k gk
+"crypto
+set cm=blowfish2 
+nnoremap j h
+nnoremap k gj
+nnoremap l gk
+nnoremap ; l
+nnoremap h ;
 "lexical stuff
 augroup lexical
         autocmd!
