@@ -64,13 +64,15 @@ PS1="\[\033[38;5;208m\]\u@\h:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\
 #platform dependent stuff
 case $os in
         "Darwin" )
+                export CLICOLOR=1
+                export LSCOLORS=exfxcxdxbxegedabagacad
                 alias ll='ls -GAlFh'
                 alias la='ls -GA'
                 alias l='ls -AGCF'
                 alias brewup='brew update -all && brew upgrade --all ; brew cask list | xargs brew cask install ; brew cleanup'
                 source $(brew --repository)/Library/Contributions/brew_bash_completion.sh;;
         "Linux" )
-                LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
+                export LS_COLORS=$LS_COLORS:'di=0;36:'
                 alias ll='ls -AlF'
                 alias la='ls -A'
                 alias l='ls -ACF';;

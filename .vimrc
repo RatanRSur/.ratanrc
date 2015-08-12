@@ -25,6 +25,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'reedes/vim-lexical'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'sjl/vitality.vim'
+Plugin 'JuliaLang/julia-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -90,8 +91,6 @@ set smartcase
 "no sounds
 set noerrorbells
 set visualbell
-"crypto
-set cm=blowfish2
 "up/down plays nice with wrapped lines
 nnoremap j gj
 nnoremap k gk
@@ -107,3 +106,5 @@ let g:lexical#spell_key = '<leader>s'
 :set noru    " short for 'ruler'
 "trailing whitespace
 :nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> :w<CR>
+"change commentary bindings
+"nnoremap <Leader>cc :Commentary<CR>
