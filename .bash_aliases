@@ -2,6 +2,7 @@ alias tmux='tmux -2'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias rr='rm -r'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
