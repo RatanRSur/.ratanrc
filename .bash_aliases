@@ -8,7 +8,7 @@ alias rr='rm -r'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-function mkcd
+mkcd()
 {
         dir="$*";
         mkdir -p "$dir" && cd "$dir";
@@ -18,6 +18,13 @@ function mkcd
 latexmode()
 {
         ls "$1" | entr -c pdflatex --halt-on-error "$1"
+}
+
+ssh192()
+{
+        username="$1"
+        target="$2"
+        ssh "$username"@192.168.0."$2"
 }
 
 man() {
