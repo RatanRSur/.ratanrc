@@ -92,7 +92,7 @@ set smartcase
 set noerrorbells
 set visualbell
 "crypto
-set cm=blowfish2 
+set cm=blowfish2
 nnoremap j h
 nnoremap k gj
 nnoremap l gk
