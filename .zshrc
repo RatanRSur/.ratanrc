@@ -48,7 +48,7 @@ ZSH_THEME="dieter"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git autojump brew)
 
 # User configuration
 
@@ -84,6 +84,7 @@ source $ZSH/oh-my-zsh.sh
 #
 ####################
 # my stuff
+# os dependent
 os=`uname -s`
 case $os in
         "Darwin" )
@@ -99,7 +100,8 @@ case $os in
                 #source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
                 #nasa apod stuff
                 rm -f ~/Pictures/apod/.DS_store
-                [ "$(ls -A ~/Pictures/apod)" ] && echo "You have astronomy pictures for review!";;
+                [ "$(ls -A ~/Pictures/apod)" ] && echo "You have astronomy pictures for review!"
+                [ "$(ls -A ~/Pictures/vertical-candidates)" ] && echo "New candidates for vertical wallpapers!";;
         "Linux" )
                 #color output
                 export LS_COLORS=$LS_COLORS:'di=0;36:'
@@ -108,3 +110,40 @@ case $os in
                 alias la='ls -A'
                 alias l='ls -ACF';;
 esac
+#other aliases
+alias tmux='tmux -2'
+alias rr='rm -r'
+
+mkcd()
+{
+        dir="$*";
+        mkdir -p "$dir" && cd "$dir";
+}
+
+#function for pdflatex compilation with entr
+latexmode()
+{
+        ls "$1" | entr -c pdflatex --halt-on-error "$1"
+}
+
+ssh192()
+{
+        username="$1"
+        target="$2"
+        ssh "$username"@192.168.0."$2"
+}
+
+man() {
+env \
+LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+LESS_TERMCAP_md=$(printf "\e[1;31m") \
+LESS_TERMCAP_me=$(printf "\e[0m") \
+LESS_TERMCAP_se=$(printf "\e[0m") \
+LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+LESS_TERMCAP_ue=$(printf "\e[0m") \
+LESS_TERMCAP_us=$(printf "\e[1;32m") \
+man "$@"
+}
+
+#syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
