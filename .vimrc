@@ -69,7 +69,7 @@ colorscheme jellybeans
 
 "code beautification
 noremap <Leader>a :Autoformat<CR>
-let g:formatdef_cplusplus = '"astyle --mode=c --style=1tbs --indent=spaces=4 -xGfpHUxek3W3jOocxyxC80"'
+let g:formatdef_cplusplus = '"astyle --mode=c --style=java --indent=spaces=4 -xGfpHUxek3W3jOocxyxC80"'
 let g:formatters_cpp = ['cplusplus']
 
 "syntastic stuff
@@ -100,8 +100,6 @@ set smartcase
 "no sounds
 set noerrorbells
 set visualbell
-
-set cm=blowfish2 "crypto
 
 "more sensible direction keys
 noremap j h
