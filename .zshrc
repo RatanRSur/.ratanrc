@@ -1,5 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/ratan/.oh-my-zsh
+
+os=`uname -s`
+case $os in
+        "Darwin" )
+                export ZSH=/Users/ratan/.oh-my-zsh;;
+        "Linux" )
+                export ZSH=/home/ratan/.oh-my-zsh;;
+esac
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -84,7 +91,6 @@ source $ZSH/oh-my-zsh.sh
 #
 ####################
 # my stuff
-os=`uname -s`
 case $os in
         "Darwin" )
                 #color output
