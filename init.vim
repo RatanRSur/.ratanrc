@@ -1,41 +1,25 @@
-filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'ciaranm/detectindent'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ervandew/supertab'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'powerline/fonts'
-Plugin 'bling/vim-airline'
-"Plugin 'scrooloose/syntastic'
-Plugin 'benekastah/neomake'
-Plugin 'reedes/vim-lexical'
-"Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'sjl/vitality.vim'
-Plugin 'JuliaLang/julia-vim'
-Plugin 'scrooloose/nerdtree'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Put your non-Plugin stuff after this line
+call plug#begin('~/.config/nvim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'ciaranm/detectindent'
+Plug 'flazz/vim-colorschemes'
+Plug 'ervandew/supertab'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'Chiel92/vim-autoformat'
+Plug 'scrooloose/nerdcommenter'
+Plug 'powerline/fonts'
+Plug 'bling/vim-airline'
+Plug 'benekastah/neomake'
+Plug 'reedes/vim-lexical'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'sjl/vitality.vim'
+Plug 'JuliaLang/julia-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ap/vim-css-color', { 'for' : 'css'}
+call plug#end()
+let g:plug_threads = 20
+set encoding=utf-8 "does this do anything?
 
 " undo stuff
 set undofile
@@ -50,8 +34,8 @@ nnoremap <Leader>e :e<Space>
 nnoremap <Leader>h :vsp<Space>
 nnoremap <Leader>v :sp<Space>
 nnoremap <Leader>d :DetectIndent<CR>
-nnoremap <Leader>n :bn<CR>
-nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>n :w<CR>:bn<CR>
+nnoremap <Leader>p :w<CR>:bp<CR>
 "splits
 set splitbelow
 set splitright
@@ -71,6 +55,12 @@ noremap <Leader>a :Autoformat<CR>
 let g:formatdef_cplusplus = '"astyle --mode=c --style=java --indent=spaces=4 -xGfpHUxek3W3jOocxyxC80"'
 let g:formatters_cpp = ['cplusplus']
 
+"folding stuff
+nnoremap <leader>z :set foldmethod=syntax<CR>
+nnoremap za zA
+nnoremap zA za
+
+autocmd! BufWritePre *.py :Autoformat<CR> "figure out why this doesn't work in neovim
 autocmd! BufWritePost * Neomake "neomake stuff
 
 "airline stuff
