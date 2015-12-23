@@ -19,7 +19,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
 call plug#end()
 let g:plug_threads = 20
-set encoding=utf-8 "does this do anything?
+"set encoding=utf-8 "does this do anything?
 
 " undo stuff
 set undofile
@@ -35,6 +35,7 @@ nnoremap <Leader>h :vsp<Space>
 nnoremap <Leader>v :sp<Space>
 nnoremap <Leader>d :DetectIndent<CR>
 nnoremap <Leader>n :w<CR>:bn<CR>
+nnoremap <Leader>bd :bdelete<CR>
 nnoremap <Leader>p :w<CR>:bp<CR>
 "splits
 set splitbelow
@@ -42,7 +43,6 @@ set splitright
 "stop that stupid window from popping up
 map q: :q
 " line number stuff
-set number
 set relativenumber
 set cursorline
 :inoremap <C-c> <Esc>
@@ -52,15 +52,19 @@ colorscheme jellybeans
 
 "code beautification
 noremap <Leader>a :Autoformat<CR>
-let g:formatdef_cplusplus = '"astyle --mode=c --style=java --indent=spaces=4 -xGfpHUxek3W3jOocxyxC80"'
+" let g:autoformat_verbosemode=1
+let g:formatdef_cplusplus = '"astyle --mode=c --style=java --indent=spaces=4 
+            \-xGfpHUxek3W3jOocxyxC80"'
 let g:formatters_cpp = ['cplusplus']
 
 "folding stuff
-nnoremap <leader>z :set foldmethod=syntax<CR>
+autocmd! BufWinEnter * if line('$')>winheight(0) | setlocal foldmethod=syntax | endif
+
+nnoremap <leader>z :setlocal foldmethod=syntax<CR>
 nnoremap za zA
 nnoremap zA za
 
-autocmd! BufWritePre *.py :Autoformat<CR> "figure out why this doesn't work in neovim
+autocmd! BufWritePre *.py :Autoformat<CR>
 autocmd! BufWritePost * Neomake "neomake stuff
 
 "airline stuff
@@ -112,7 +116,8 @@ let g:lexical#spell_key = '<leader>s'
 :set noru    " short for 'ruler'
 
 "remove trailing whitespace
-:nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+:nnoremap <silent> <Leader>t 
+            \:let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "tmux stuff
 let g:tmux_navigator_no_mappings = 1
@@ -122,7 +127,5 @@ nnoremap <silent> <c-l> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>; :TmuxNavigateRight<cr>
 nnoremap <silent> <c-/> :TmuxNavigatePrevious<cr>
 
-" nerd tree if no file specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" nerd tree
 let NERDTreeShowHidden=1 " show hidden files in nerd
