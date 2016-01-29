@@ -49,6 +49,7 @@ set cursorline
 :set scrolloff=5 "scrolloff
 syntax enable
 colorscheme jellybeans
+set colorcolumn=98 "for selfish reasons mwahahaha
 
 "code beautification
 noremap <Leader>a :Autoformat<CR>
@@ -57,13 +58,14 @@ let g:formatdef_cplusplus = '"astyle --mode=c --style=java --indent=spaces=4
             \-xGfpHUxek3W3jOocxyxC80"'
 let g:formatters_cpp = ['cplusplus']
 
-"folding stuff
+"automatically turn folding on if file is longer than my screen
 autocmd! BufWinEnter * if line('$')>winheight(0) | setlocal foldmethod=syntax | endif
-
 nnoremap <leader>z :setlocal foldmethod=syntax<CR>
-nnoremap za zA
-nnoremap zA za
+"nnoremap za zA
+"nnoremap zA za
 
+let g:neomake_cpp_enable_markers=['clang']
+let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall"]
 autocmd! BufWritePre *.py :Autoformat<CR>
 autocmd! BufWritePost * Neomake "neomake stuff
 
