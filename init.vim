@@ -128,9 +128,3 @@ nnoremap <silent> <c-k> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-l> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-w>; :TmuxNavigateRight<cr>
 nnoremap <silent> <c-/> :TmuxNavigatePrevious<cr>
-
-" nerd tree
-let NERDTreeShowHidden=1 " show hidden files in nerd
-"auto start nerd tree if no args passed to vim
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
