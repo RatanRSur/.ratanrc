@@ -118,7 +118,6 @@ case $os in
                 ;;
 esac
 #other aliases
-alias vim='nvim'
 alias tmux='tmux -2'
 alias rr='rm -r'
 alias gs='git status'
