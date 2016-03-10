@@ -123,6 +123,7 @@ alias tmux='tmux -2'
 alias rr='rm -r'
 alias gs='git status'
 alias gd='git diff'
+alias gl='git log --decorate --graph --oneline'
 alias g11='g++ --std=c++11'
 alias g14='g++ --std=c++14'
 
