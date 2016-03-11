@@ -5,8 +5,9 @@
 # this file and re-run i3-config-wizard(1).
 #
 #my custom stuff
-exec xset r rate 300 30
+exec feh --bg-fill ~/pictures/wallpaper.*
 exec terminator
+exec xset r rate 300 30
 
 
 # i3 config file (v4)
