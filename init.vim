@@ -97,15 +97,8 @@ set noerrorbells
 set visualbell
 
 "more sensible direction keys
-noremap j h
-noremap k gj
-noremap l gk
-noremap ; l
-noremap h ;
-noremap J H
-noremap K J
-noremap L K
-noremap H ;
+noremap j gj
+noremap k gk
 
 "lexical stuff
 augroup lexical
@@ -124,10 +117,10 @@ let g:lexical#spell_key = '<leader>s'
 
 "tmux stuff
 let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <c-j> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-k> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-l> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-w>; :TmuxNavigateRight<cr>
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l>; :TmuxNavigateRight<cr>
 nnoremap <silent> <c-/> :TmuxNavigatePrevious<cr>
 
 "fzf
