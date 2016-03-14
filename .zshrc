@@ -114,7 +114,7 @@ case $os in
                 #ls aliases
                 alias ll='ls -AlF'
                 alias la='ls -A'
-                alias l='ls -ACF'
+                alias l='ls -AlF'
                 ;;
 esac
 #other aliases

@@ -97,15 +97,8 @@ set noerrorbells
 set visualbell
 
 "more sensible direction keys
-noremap j h
-noremap k gj
-noremap l gk
-noremap ; l
-noremap h ;
-noremap J H
-noremap K J
-noremap L K
-noremap H ;
+noremap j gj
+noremap k gk
 
 "lexical stuff
 augroup lexical
