@@ -112,9 +112,8 @@ case $os in
                 #color output
                 export LS_COLORS=$LS_COLORS:'di=0;36:'
                 #ls aliases
-                alias ll='ls -AlF'
+                alias l='ls -AlhF'
                 alias la='ls -A'
-                alias l='ls -AlF'
                 ;;
 esac
 #other aliases
