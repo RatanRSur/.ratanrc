@@ -110,10 +110,11 @@ case $os in
                 ;;
         "Linux" )
                 #color output
-                export LS_COLORS=$LS_COLORS:'di=0;36:'
+                export LS_COLORS=$LS_COLORS:'di=0;36:ow=0;37'
                 #ls aliases
                 alias l='ls -AlhF'
                 alias la='ls -A'
+                export VISUAL="nvim"
                 ;;
 esac
 #other aliases

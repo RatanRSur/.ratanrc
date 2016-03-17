@@ -5,6 +5,7 @@
 # this file and re-run i3-config-wizard(1).
 #
 #my custom stuff
+#exec redshift 
 exec feh --bg-fill ~/pictures/wallpaper.*
 exec terminator
 exec xset r rate 300 30
