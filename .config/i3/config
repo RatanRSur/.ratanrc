@@ -9,6 +9,7 @@
 exec feh --bg-fill ~/pictures/wallpaper.*
 exec terminator
 exec xset r rate 300 30
+exec xbindkeys -p
 
 
 # i3 config file (v4)
