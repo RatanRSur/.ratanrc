@@ -123,7 +123,7 @@ alias rr='rm -r'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log --decorate --graph --oneline'
-alias grl='git --no-pager log --decorate --graph --oneline'
+alias grl='git --no-pager log --decorate --graph --oneline | tail -20'
 alias g11='g++ --std=c++11'
 alias g14='g++ --std=c++14'
 
