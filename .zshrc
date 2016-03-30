@@ -106,7 +106,6 @@ case $os in
                 #nasa apod stuff
                 rm -f ~/Pictures/apod/.DS_store
                 [ "$(ls -A ~/Pictures/apod)" ] && echo "You have astronomy pictures for review!"
-                #[ "$(ls -A ~/Pictures/vertical-candidates)" ] && echo "New candidates for vertical wallpapers!";;
                 ;;
         "Linux" )
                 #color output
