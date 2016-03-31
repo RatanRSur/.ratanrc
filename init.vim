@@ -18,6 +18,7 @@ Plug 'JuliaLang/julia-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
+Plug 'critiqjo/lldb.nvim'
 call plug#end()
 let g:plug_threads = 20
 "set encoding=utf-8 "does this do anything?
@@ -53,9 +54,10 @@ set colorcolumn=99 "for selfish reasons mwahahaha
 "code beautification
 noremap <Leader>a :Autoformat<CR>
 " let g:autoformat_verbosemode=1
-let g:formatdef_cplusplus = '"astyle --mode=c --style=java --indent=spaces=4
-            \-xGfpHUxek3W3jOocxyxC80"'
-let g:formatters_cpp = ['cplusplus']
+let g:formatdef_cust_cpp = '"astyle --mode=c --style=java --indent=spaces=4 -xGfpHUxek3W3jOocxyxC98"'
+let g:formatters_cpp = ['cust_cpp']
+let g:formatdef_cust_c = '"astyle --mode=c --style=java --indent=spaces=4 -fpHUxek3W3jOocxC98"'
+let g:formatters_c = ['cust_c']
 
 "copy this line and comment it out, uses the <leader>cc mapping from nerdcommenter
 map <Leader>cn yyp<Leader>ccl
