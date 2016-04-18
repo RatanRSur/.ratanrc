@@ -15,10 +15,8 @@ Plug 'reedes/vim-lexical'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'sjl/vitality.vim'
 Plug 'JuliaLang/julia-vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
-Plug 'critiqjo/lldb.nvim'
 call plug#end()
 let g:plug_threads = 20
 "set encoding=utf-8 "does this do anything?
@@ -33,23 +31,28 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader><Leader>q :q!<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>e :e<Space>
-nnoremap <Leader>d :DetectIndent<CR>
 nnoremap <Leader>n :w<CR>:bn<CR>
-nnoremap <Leader>bd :bdelete<CR>
+nnoremap <Leader>d :bdelete<CR>
 nnoremap <Leader>p :w<CR>:bp<CR>
 "splits
 set splitbelow
 set splitright
 "stop that stupid window from popping up
 map q: :q
+" more sensible yank
+nmap Y y$
 " line number stuff
 set relativenumber
 set cursorline
 :inoremap <C-c> <Esc>
-:set scrolloff=5 "scrolloff
 syntax enable
 colorscheme jellybeans
-set colorcolumn=99 "for selfish reasons mwahahaha
+if has("unix")
+    let s:uname = system("uname -s")
+    if s:uname == "Darwin"
+        set colorcolumn=99 "for selfish reasons mwahahaha
+    endif
+endif
 
 "code beautification
 noremap <Leader>a :Autoformat<CR>
@@ -116,14 +119,6 @@ let g:lexical#spell_key = '<leader>s'
 
 "remove trailing whitespace
 :nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
-"tmux stuff
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l>; :TmuxNavigateRight<cr>
-nnoremap <silent> <c-/> :TmuxNavigatePrevious<cr>
 
 "fzf
 map <Leader>f :FZF<CR>
