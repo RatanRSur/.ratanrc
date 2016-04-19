@@ -24,6 +24,7 @@ let g:plug_threads = 20
 " undo stuff
 set undofile
 set undodir=~/.vim/undodir
+
 let mapleader = "\<Space>" " space leader
 " remap stuff with leader
 nnoremap <Leader>w :w<CR>
@@ -34,13 +35,18 @@ nnoremap <Leader>e :e<Space>
 nnoremap <Leader>n :w<CR>:bn<CR>
 nnoremap <Leader>d :bdelete<CR>
 nnoremap <Leader>p :w<CR>:bp<CR>
+
 "splits
 set splitbelow
 set splitright
+
 "stop that stupid window from popping up
 map q: :q
-" more sensible yank
+
+" other mappings
 nmap Y y$
+nmap <CR> :nohl<CR>
+
 " line number stuff
 set relativenumber
 set cursorline
@@ -131,6 +137,7 @@ nnoremap <silent> <Leader>v :call fzf#run({
 nnoremap <silent> <Leader>h :call fzf#run({
             \   'right': winwidth('.') / 2,
             \   'sink':  'vertical botright split' })<CR>
+
 let $FZF_DEFAULT_COMMAND='ag
             \ --ignore .git
             \ --ignore undodir
@@ -138,5 +145,11 @@ let $FZF_DEFAULT_COMMAND='ag
             \ --ignore Applications
             \ --ignore macports
             \ --hidden -f -g ""'
+
+"jump to last opened position
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 
 autocmd! bufwritepost .nvimrc source % "auto source this file
