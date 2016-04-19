@@ -50,7 +50,7 @@ nmap <CR> :nohl<CR>
 " line number stuff
 set relativenumber
 set cursorline
-:inoremap <C-c> <Esc>
+inoremap <C-c> <Esc>
 syntax enable
 colorscheme jellybeans
 if has("unix")
@@ -62,16 +62,15 @@ endif
 
 "code beautification
 noremap <Leader>a :Autoformat<CR>
+
 " let g:autoformat_verbosemode=1
-let g:formatdef_cust_cpp = '"astyle --mode=c --style=java --indent=spaces=4 -xGfpHUxek3W3jOocxyxC98"'
-let g:formatters_cpp = ['cust_cpp']
-let g:formatdef_cust_c = '"astyle --mode=c --style=java --indent=spaces=4 -fpHUxek3W3jOocxC98"'
-let g:formatters_c = ['cust_c']
+let g:formatdef_cplusplus = '"astyle --mode=c --style=java --indent=spaces=4
+            \-xGfpHUxek3W3jOocxyxC80"'
+let g:formatters_cpp = ['cplusplus']
 
-"copy this line and comment it out, uses the <leader>cc mapping from nerdcommenter
-map <Leader>cn yyp<Leader>ccl
-
-"automatically turn folding on if file is longer than my screen
+"turn on manual folding always
+"turn syntax folding on if file is longer than my screen
+setlocal foldmethod=manual
 autocmd! BufWinEnter * if line('$')>winheight(0) | setlocal foldmethod=syntax | endif
 nnoremap <leader>z :setlocal foldmethod=syntax<CR>
 nnoremap za zA
