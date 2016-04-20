@@ -19,7 +19,6 @@ Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
 call plug#end()
 let g:plug_threads = 20
-"set encoding=utf-8 "does this do anything?
 
 " undo stuff
 set undofile
@@ -101,7 +100,6 @@ let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall"]
 autocmd! BufWritePost * Neomake "neomake stuff
 
 "airline stuff
-:set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16color'
 
@@ -112,13 +110,7 @@ set softtabstop=4
 
 set breakindent "better breaking
 
-set backspace=2 "backspace can go to previous line
-
-set wildmenu "menu listing
-
 "search stuff
-set incsearch
-set hlsearch
 set ignorecase
 set smartcase
 
