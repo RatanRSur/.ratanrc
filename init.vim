@@ -50,6 +50,26 @@ nmap <CR> :nohl<CR>
 " line number stuff
 set relativenumber
 set cursorline
+"cursorline only if focused
+
+augroup highlight_follows_focus
+    autocmd!
+    autocmd WinEnter * set cursorline
+    autocmd WinLeave * set nocursorline
+augroup END
+
+augroup highligh_follows_vim
+    autocmd!
+    autocmd FocusGained * set cursorline
+    autocmd FocusLost * set nocursorline
+augroup END
+
+"make arrow keys do something useful
+nnoremap <silent> <Left> :vertical resize +2<CR>
+nnoremap <silent> <Right> :vertical resize -2<CR>
+nnoremap <silent> <Up> :resize -2<CR>
+nnoremap <silent> <Down> :resize +2<CR>
+
 inoremap <C-c> <Esc>
 syntax enable
 colorscheme jellybeans
@@ -151,4 +171,5 @@ autocmd BufReadPost *
     \   exe "normal g`\"" |
     \ endif
 
+autocmd! bufwritepost init.vim source % "auto source this file
 autocmd! bufwritepost .nvimrc source % "auto source this file
