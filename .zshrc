@@ -164,7 +164,7 @@ case $os in
                 ;;
         "Linux" )
                 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-                export PATH=$PATH:/opt/anaconda2/bin
+                export PATH=$PATH:/opt/anaconda3/bin
                 export PATH=$PATH:/usr/bin/vendor_perl
                 ;;
 esac
