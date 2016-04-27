@@ -14,6 +14,7 @@ Plug 'benekastah/neomake'
 Plug 'reedes/vim-lexical'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'sjl/vitality.vim'
+Plug 'wellle/targets.vim'
 Plug 'JuliaLang/julia-vim'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
@@ -26,7 +27,7 @@ set undodir=~/.vim/undodir
 
 let mapleader = "\<Space>" " space leader
 " remap stuff with leader
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>w :update<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader><Leader>q :q!<CR>
 nnoremap <Leader>x :x<CR>
@@ -44,7 +45,7 @@ map q: :q
 
 " other mappings
 nmap Y y$
-nmap <CR> :nohl<CR>
+nmap <silent> <CR> :nohl<CR>
 
 " line number stuff
 set relativenumber
