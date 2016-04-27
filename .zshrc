@@ -123,6 +123,7 @@ alias gs='git status'
 alias gd='git diff'
 alias gl='git log --decorate --graph --oneline'
 alias grl='git --no-pager log --decorate --graph --oneline --color | head -20'
+alias dirty='nvim `git diff --name-only`'
 alias g11='g++ --std=c++11'
 alias g14='g++ --std=c++14'
 
