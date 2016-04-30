@@ -84,9 +84,11 @@ endif
 noremap <Leader>a :Autoformat<CR>
 
 " let g:autoformat_verbosemode=1
-let g:formatdef_cplusplus = '"astyle --mode=c --style=java --indent=spaces=4
-            \-xGfpHUxek3W3jOocxyxC80"'
-let g:formatters_cpp = ['cplusplus']
+let g:formatdef_cust_cpp = '"astyle --mode=c --style=java --indent=spaces=4 -xGfpHUxek3W3jOocxyxC98"'
+let g:formatters_cpp = ['cust_cpp']
+let g:formatdef_cust_c = '"astyle --mode=c --style=java --indent=spaces=4 -fpHUxek3W3jOocxC98"'
+let g:formatters_c = ['cust_c']
+
 
 "turn on manual folding always
 "turn syntax folding on if file is longer than my screen
