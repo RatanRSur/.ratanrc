@@ -101,11 +101,11 @@ case $os in
                 alias la='ls -GA'
                 #brew stuff
                 alias brewup="brew update -all && brew upgrade --all ; brew cask list | xargs brew cask install ; brew cleanup"
-                ## check if this can be done in zsh
-                #source $(brew --repository)/Library/Contributions/brew_bash_completion.sh
                 #nasa apod stuff
-                rm -f ~/Pictures/apod/.DS_store
+                /bin/rm -f ~/Pictures/apod/.DS_store
                 [ "$(ls -A ~/Pictures/apod)" ] && echo "You have astronomy pictures for review!"
+                #move to trash instead of deleting forever
+                alias rm='trash'
                 ;;
         "Linux" )
                 #color output
