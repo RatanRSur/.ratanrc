@@ -36,6 +36,9 @@ nnoremap <Leader>n :w<CR>:bn<CR>
 nnoremap <Leader>d :bdelete<CR>
 nnoremap <Leader>p :w<CR>:bp<CR>
 
+" comment and copy
+nnoremap <Leader>cp :let @i=@0<CR>:call NERDComment('n', "yank")<CR>p:let @0=@i<CR>
+
 "splits
 set splitbelow
 set splitright
