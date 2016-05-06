@@ -50,15 +50,14 @@ nmap <silent> <CR> :nohl<CR>
 " line number stuff
 set relativenumber
 set cursorline
-"cursorline only if focused
 
+"cursorline only if focused
 augroup highlight_follows_focus
     autocmd!
     autocmd WinEnter * set cursorline
     autocmd WinLeave * set nocursorline
 augroup END
-
-augroup highligh_follows_vim
+augroup highlight_follows_vim
     autocmd!
     autocmd FocusGained * set cursorline
     autocmd FocusLost * set nocursorline
@@ -73,11 +72,8 @@ nnoremap <silent> <Down> :resize +2<CR>
 inoremap <C-c> <Esc>
 syntax enable
 colorscheme jellybeans
-if has("unix")
-    let s:uname = system("uname -s")
-    if s:uname == "Darwin"
-        set colorcolumn=99 "for selfish reasons mwahahaha
-    endif
+if has("mac")
+    set colorcolumn=99 "for selfish reasons mwahahaha
 endif
 
 "code beautification
@@ -116,6 +112,10 @@ set breakindent "better breaking
 "search stuff
 set ignorecase
 set smartcase
+ 
+"trying out no wrap
+set nowrap
+set sidescroll=1
 
 "no sounds
 set noerrorbells
