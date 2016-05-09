@@ -75,6 +75,9 @@ nnoremap <silent> <Down> :resize +2<CR>
 inoremap <C-c> <Esc>
 syntax enable
 colorscheme jellybeans
+"let t_ZH="[3m"
+"let t_ZR="[23m"
+"highlight Comment cterm=italic
 if has("mac")
     set colorcolumn=99 "for selfish reasons mwahahaha
 endif
