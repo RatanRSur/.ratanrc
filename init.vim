@@ -120,6 +120,8 @@ set breakindent "better breaking
 set ignorecase
 set smartcase
  
+set sidescroll=1 "sidescroll
+
 "no sounds
 set noerrorbells
 set visualbell
