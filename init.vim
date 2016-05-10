@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-eunuch'
 Plug 'ciaranm/detectindent'
 Plug 'flazz/vim-colorschemes'
 Plug 'ervandew/supertab'
@@ -119,10 +120,6 @@ set breakindent "better breaking
 set ignorecase
 set smartcase
  
-"trying out no wrap
-set nowrap
-set sidescroll=1
-
 "no sounds
 set noerrorbells
 set visualbell
