@@ -96,6 +96,7 @@ let g:formatters_c = ['cust_c']
 "turn on manual folding always
 "turn syntax folding on if file is longer than my screen
 setlocal foldmethod=manual
+set hidden
 autocmd! BufWinEnter * if line('$')>winheight(0) | setlocal foldmethod=syntax | endif
 nnoremap <leader>z :setlocal foldmethod=syntax<CR>
 nnoremap za zA
