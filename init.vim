@@ -125,9 +125,9 @@ set sidescroll=1 "sidescroll
 set noerrorbells
 set visualbell
 
-"more sensible direction keys
-noremap j gj
-noremap k gk
+"go down visually if no count, by line number if count
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 "make K do something similar to J
 nnoremap K kddpkJ
