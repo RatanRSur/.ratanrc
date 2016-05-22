@@ -51,6 +51,7 @@ map q: :q
 " other mappings
 nmap Y y$
 nmap <silent> <CR> :nohl<CR>
+nmap <silent> <BS> 
 
 " line number stuff
 set relativenumber
