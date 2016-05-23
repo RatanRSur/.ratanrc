@@ -127,6 +127,20 @@ set breakindent "better breaking
 "search stuff
 set ignorecase
 set smartcase
+
+"trying nice next and Next searching
+""""""""""""""""''
+function! s:nice_next(cmd)
+  let view = winsaveview()
+  execute "normal! " . a:cmd
+  if view.topline != winsaveview().topline
+    normal! zz
+  endif
+endfunction
+
+nnoremap <silent> n :call <SID>nice_next('n')<cr>
+nnoremap <silent> N :call <SID>nice_next('N')<cr>
+"""""""""""""""""""''
  
 set sidescroll=1 "sidescroll
 
