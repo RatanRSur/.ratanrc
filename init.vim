@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
+Plug 'prendradjaja/vim-vertigo'
 Plug 'ciaranm/detectindent'
 Plug 'flazz/vim-colorschemes'
 Plug 'ervandew/supertab'
@@ -56,6 +57,13 @@ nmap <silent> <BS> 
 " line number stuff
 set relativenumber
 set cursorline
+"vim vertigo stuff
+nnoremap <silent> <Leader>j :<C-U>VertigoDown n<CR>
+vnoremap <silent> <Leader>j :<C-U>VertigoDown v<CR>
+onoremap <silent> <Leader>j :<C-U>VertigoDown o<CR>
+nnoremap <silent> <Leader>k :<C-U>VertigoUp n<CR>
+vnoremap <silent> <Leader>k :<C-U>VertigoUp v<CR>
+onoremap <silent> <Leader>k :<C-U>VertigoUp o<CR>
 
 "cursorline only if focused
 augroup highlight_follows_focus
