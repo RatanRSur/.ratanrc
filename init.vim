@@ -28,6 +28,8 @@ let g:plug_threads = 20
 set undofile
 set undodir=~/.vim/undodir
 
+set noswapfile
+
 let mapleader = "\<Space>" " space leader
 " remap stuff with leader
 nnoremap <Leader>w :update<CR>
