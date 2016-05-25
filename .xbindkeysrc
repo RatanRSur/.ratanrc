@@ -69,9 +69,15 @@
 # End of default xbindkeys configuration #
 ##################################
 "amixer -c 0 set Master 5+"
-    XF86AudioRaiseVolume
+    m:0x0 + c:123
 "amixer -c 0 set Master 5-"
-    XF86AudioLowerVolume
+    m:0x0 + c:122
 "amixer -c 0 set Master toggle"
-    XF86AudioMute
+    m:0x0 + c:121
 
+
+#Press combination of keys or/and click under the window.
+#You can use one of the two lines after "NoCommand"
+#in $HOME/.xbindkeysrc to bind a key.
+#"(Scheme function)"
+    #XF86AudioMute
