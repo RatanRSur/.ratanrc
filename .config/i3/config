@@ -165,6 +165,9 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         font pango:Ubuntu 8
+        colors{
+            background #121212
+        }
 }
 
 for_window [class="^.*"] border pixel 0
