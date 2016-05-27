@@ -93,6 +93,7 @@ syntax enable
 colorscheme base16-tomorrow
 let base16colorspace=256
 set background=dark
+highlight Comment cterm=italic
 if has("mac")
     set colorcolumn=99 "for selfish reasons mwahahaha
 endif
