@@ -5,6 +5,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'prendradjaja/vim-vertigo'
 Plug 'ciaranm/detectindent'
 Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Chiel92/vim-autoformat'
@@ -89,7 +90,9 @@ nnoremap <silent> <Down> :resize +2<CR>
 
 inoremap <C-c> <Esc>
 syntax enable
-colorscheme jellybeans
+colorscheme base16-tomorrow
+let base16colorspace=256
+set background=dark
 if has("mac")
     set colorcolumn=99 "for selfish reasons mwahahaha
 endif
