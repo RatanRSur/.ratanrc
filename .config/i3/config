@@ -12,6 +12,29 @@ exec xset r rate 350 50
 exec xbindkeys -p
 
 
+set $base00 #1D1F21
+set $base08 #CC6666
+set $base0B #B5BD68
+set $base0A #F0C674
+set $base0D #81A2BE
+set $base0E #B294BB
+set $base0C #8ABEB7
+set $base05 #C5C8C6
+set $base03 #969896
+set $base08 #CC6666
+set $base0B #B5BD68
+set $base0A #F0C674
+set $base0D #81A2BE
+set $base0E #B294BB
+set $base0C #8ABEB7
+set $base07 #FFFFFF
+set $base09 #DE935F
+set $base0F #A3685A
+set $base01 #282A2E
+set $base02 #373B41
+set $base04 #B4B7B4
+set $base06 #E0E0E0
+
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -166,7 +189,14 @@ bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         font pango:Ubuntu 8
         colors{
-            background #1d1f21
+            separator $base03
+            background $base00
+            statusline $base05
+                               #border background text
+            focused_workspace  $base01 $base01    $base07
+            active_workspace   $base01 $base02    $base03
+            inactive_workspace $base01 $base01    $base03
+            urgent_workspace   $base01 $base01    $base08
         }
 }
 
