@@ -7,7 +7,7 @@
 #my custom stuff
 #exec redshift 
 exec feh --bg-fill ~/images/wallpaper.*
-exec terminator
+exec gnome-terminal
 exec xset r rate 350 50
 exec xbindkeys -p
 
@@ -37,7 +37,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
