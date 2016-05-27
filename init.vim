@@ -11,8 +11,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Chiel92/vim-autoformat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'powerline/fonts'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'benekastah/neomake'
 Plug 'reedes/vim-lexical'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -120,10 +118,6 @@ nnoremap zA za
 let g:neomake_cpp_enable_markers=['clang']
 let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall"]
 autocmd! BufWritePost * Neomake "neomake stuff
-
-"airline stuff
-let g:airline_powerline_fonts = 1
-let g:airline_theme='base16color'
 
 "spaces as tabs
 set expandtab
