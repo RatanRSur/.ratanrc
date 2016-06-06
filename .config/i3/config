@@ -72,10 +72,6 @@ bindsym $mod+Shift+q kill
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -b'
 
-#set $left j
-#set $down k
-#set $up l
-#set $right semicolon
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
