@@ -20,7 +20,7 @@ Plug 'JuliaLang/julia-vim'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
 call plug#end()
-let g:plug_threads = 20
+let g:plug_threads = 32
 
 " undo stuff
 set undofile
