@@ -91,7 +91,7 @@ colorscheme base16-tomorrow
 let base16colorspace=256
 set background=dark
 highlight Comment cterm=italic
-highlight Search ctermfg=black
+highlight Search cterm=reverse ctermbg=NONE ctermfg=NONE
 highlight LineNr ctermbg=black
 if has("mac")
     set colorcolumn=99 "for selfish reasons mwahahaha
