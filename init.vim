@@ -156,7 +156,7 @@ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 "make K do something similar to J
-nnoremap K kddpkJ
+nnoremap K k"kdd"kpkJ
 
 "lexical stuff
 augroup lexical
