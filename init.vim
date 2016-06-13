@@ -31,13 +31,14 @@ set noswapfile
 let mapleader = "\<Space>" " space leader
 " remap stuff with leader
 nnoremap <Leader>w :update<CR>
+nnoremap <Leader><Leader>w :w!<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader><Leader>q :q!<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>e :e<Space>
-nnoremap <Leader>n :w<CR>:bn<CR>
+nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>d :bdelete<CR>
-nnoremap <Leader>p :w<CR>:bp<CR>
+nnoremap <Leader>p :bp<CR>
 
 " comment and copy
 nnoremap <Leader>cp :let @i=@0<CR>:call NERDComment('n', "yank")<CR>p:let @0=@i<CR>
