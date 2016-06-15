@@ -118,10 +118,10 @@ case $os in
                 alias tmux="TERM=screen-256color tmux"
                 export VISUAL="nvim"
                 # Base16 Shell
-                BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
-                [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
                 ;;
 esac
+BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 #other aliases
 alias rr='rm -r'
 alias gs='git status'
