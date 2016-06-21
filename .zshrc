@@ -117,7 +117,8 @@ case $os in
                 alias la='ls -A'
                 alias tmux="TERM=screen-256color tmux"
                 export VISUAL="nvim"
-                # Base16 Shell
+                alias c="xclip -selection clipboard"
+                alias v="xclip -o"
                 ;;
 esac
 BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
