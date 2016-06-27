@@ -17,6 +17,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'sjl/vitality.vim'
 Plug 'wellle/targets.vim'
 Plug 'JuliaLang/julia-vim'
+Plug 'derekwyatt/vim-scala'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
 call plug#end()
