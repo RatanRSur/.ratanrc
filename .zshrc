@@ -101,7 +101,7 @@ case $os in
                 alias l='ls -GAlFh'
                 alias la='ls -GA'
                 #brew stuff
-                alias brewup="brew update -all && brew upgrade --all ; brew cask list | xargs brew cask install ; brew cleanup"
+                alias brewup="brew update -all && brew upgrade --all ; brew cask list | xargs brew cask install"
                 #nasa apod stuff
                 /bin/rm -f ~/Pictures/apod/.DS_store
                 [ "$(ls -A ~/Pictures/apod)" ] && echo "You have astronomy pictures for review!"
