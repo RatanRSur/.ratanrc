@@ -119,6 +119,9 @@ case $os in
                 export VISUAL="nvim"
                 alias c="xclip -selection clipboard"
                 alias v="xclip -o"
+                export PATH=~/bin:$PATH
+                #work stuff
+                [[ "$AZUREML_PROFILE" != "" ]] || . "$HOME/.azureml_profile"
                 ;;
 esac
 BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
