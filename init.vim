@@ -61,6 +61,8 @@ nnoremap c* *Ncgn
 " line number stuff
 set relativenumber
 set cursorline
+set ruler
+
 "vim vertigo stuff
 nnoremap <silent> <Leader>j :<C-U>VertigoDown n<CR>
 vnoremap <silent> <Leader>j :<C-U>VertigoDown v<CR>
@@ -169,11 +171,10 @@ augroup lexical
 augroup END
 let g:lexical#spell_key = '<leader>s'
 
-:set nosmd   " short for 'showmode'
-:set noru    " short for 'ruler'
+set nosmd   " short for 'showmode'
 
 "remove trailing whitespace
-:nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "fzf
 map <Leader>f :FZF<CR>
