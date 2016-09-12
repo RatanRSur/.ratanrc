@@ -18,6 +18,7 @@ Plug 'sjl/vitality.vim'
 Plug 'wellle/targets.vim'
 Plug 'JuliaLang/julia-vim'
 Plug 'derekwyatt/vim-scala'
+Plug 'moll/vim-bbye'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
 call plug#end()
@@ -38,7 +39,7 @@ nnoremap <Leader><Leader>q :q!<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>e :e<Space>
 nnoremap <Leader>n :bn<CR>
-nnoremap <Leader>d :bdelete<CR>
+nnoremap <Leader>d :Bdelete<CR>
 nnoremap <Leader>p :bp<CR>
 
 " comment and copy
