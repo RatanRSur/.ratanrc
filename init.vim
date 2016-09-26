@@ -174,9 +174,6 @@ let g:lexical#spell_key = '<leader>s'
 
 set nosmd   " short for 'showmode'
 
-"remove trailing whitespace
-nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
 "fzf
 map <Leader>f :FZF<CR>
 map <Leader>` :FZF ~<CR>
