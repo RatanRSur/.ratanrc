@@ -26,8 +26,22 @@ let g:plug_threads = 32
 " undo stuff
 set undofile
 set undodir=~/.vim/undodir
-
 set noswapfile
+set splitbelow
+set splitright
+set relativenumber
+set cursorline
+set ruler
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set nosmd   " short for 'showmode'
+set noerrorbells
+set visualbell
+set sidescroll=1 
+set breakindent "better breaking
+set ignorecase
+set smartcase
 
 let mapleader = "\<Space>" " space leader
 " remap stuff with leader
@@ -44,10 +58,6 @@ nnoremap <Leader>p :bp<CR>
 " comment and copy
 nnoremap <Leader>cp :let @i=@0<CR>:call NERDComment('n', "yank")<CR>p:let @0=@i<CR>
 
-"splits
-set splitbelow
-set splitright
-
 "stop that stupid window from popping up
 map q: :q
 
@@ -57,11 +67,6 @@ nmap <silent> <CR> :nohl<CR>
 nmap <silent> <BS> 
 nnoremap * *N
 nnoremap c* *Ncgn
-
-" line number stuff
-set relativenumber
-set cursorline
-set ruler
 
 "vim vertigo stuff
 nnoremap <silent> <Leader>j :<C-U>VertigoDown n<CR>
@@ -125,17 +130,6 @@ let g:neomake_cpp_enable_markers=['clang']
 let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall"]
 autocmd! BufWritePost * Neomake "neomake stuff
 
-"spaces as tabs
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-
-set breakindent "better breaking
-
-"search stuff
-set ignorecase
-set smartcase
-
 "trying nice next and Next searching
 """"""""""""""""''
 function! s:nice_next(cmd)
@@ -149,12 +143,6 @@ endfunction
 nnoremap <silent> n :call <SID>nice_next('n')<cr>
 nnoremap <silent> N :call <SID>nice_next('N')<cr>
 """""""""""""""""""''
- 
-set sidescroll=1 "sidescroll
-
-"no sounds
-set noerrorbells
-set visualbell
 
 "go down visually if no count, by line number if count
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
