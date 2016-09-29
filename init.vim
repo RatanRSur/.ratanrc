@@ -5,7 +5,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'prendradjaja/vim-vertigo'
 Plug 'ciaranm/detectindent'
 Plug 'chriskempson/base16-vim'
-Plug 'ervandew/supertab'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Chiel92/vim-autoformat'
 Plug 'scrooloose/nerdcommenter'
@@ -160,8 +160,10 @@ augroup lexical
 augroup END
 let g:lexical#spell_key = '<leader>s'
 
-set nosmd   " short for 'showmode'
 
+let g:deoplete#enable_at_startup = 1 " Use deoplete.
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+"
 "fzf
 map <Leader>f :FZF<CR>
 map <Leader>` :FZF ~<CR>
