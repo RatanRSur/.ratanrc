@@ -23,7 +23,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
 call plug#end()
 let g:plug_threads = 32
 
-" undo stuff
 set undofile
 set undodir=~/.vim/undodir
 set noswapfile
@@ -35,13 +34,29 @@ set ruler
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-set nosmd   " short for 'showmode'
+set nosmd   " short for 'noshowmode'
 set noerrorbells
 set visualbell
-set sidescroll=1 
+set sidescroll=1
+set sidescrolloff=3
 set breakindent "better breaking
 set ignorecase
 set smartcase
+set breakindentopt=shift:2
+let &showbreak='⤷ '       " ARROW POINTING DOWNWARDS THEN CURVING RIGHTWARDS (U+2937, UTF-8: E2 A4 B7)
+set list                  " show whitespace
+set listchars=nbsp:⦸      " CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
+set listchars+=tab:▷┅     " WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7)
+                          " + BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL (U+2505, UTF-8: E2 94 85)
+set listchars+=extends:»  " RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00BB, UTF-8: C2 BB)
+set listchars+=precedes:« " LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, UTF-8: C2 AB)
+set listchars+=trail:•    " BULLET (U+2022, UTF-8: E2 80 A2)
+autocmd InsertEnter * set listchars-=trail:•
+autocmd InsertLeave * set listchars+=trail:•
+let &l:colorcolumn=join(range(101, 999), ',')
+set formatoptions+=j "smart joining of comments
+set nojoinspaces
+set wildmode=longest:full,full
 
 let mapleader = "\<Space>" " space leader
 " remap stuff with leader
@@ -102,9 +117,6 @@ set background=dark
 highlight Comment cterm=italic
 highlight Search cterm=reverse ctermbg=NONE ctermfg=NONE
 highlight LineNr ctermbg=black
-if has("mac")
-    set colorcolumn=99 "for selfish reasons mwahahaha
-endif
 
 "code beautification
 noremap <Leader>a :Autoformat<CR>
