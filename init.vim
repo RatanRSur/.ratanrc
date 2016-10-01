@@ -65,7 +65,7 @@ nnoremap <Leader><Leader>w :w!<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader><Leader>q :q!<CR>
 nnoremap <Leader>x :x<CR>
-nnoremap <Leader>e :e<Space>
+nnoremap <Leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>d :Bdelete<CR>
 nnoremap <Leader>p :bp<CR>
