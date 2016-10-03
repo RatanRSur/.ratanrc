@@ -58,6 +58,7 @@ let &l:colorcolumn=join(range(101, 999), ',')
 set formatoptions+=j "smart joining of comments
 set nojoinspaces
 set wildmode=longest:full,full
+set hidden
 
 let mapleader = "\<Space>" " space leader
 " remap stuff with leader
@@ -133,7 +134,6 @@ let g:formatters_scala = ['scalafmt']
 "turn on manual folding always
 "turn syntax folding on if file is longer than my screen
 setlocal foldmethod=manual
-set hidden
 autocmd! BufWinEnter * if line('$')>winheight(0) | setlocal foldmethod=syntax | endif
 nnoremap <leader>z :setlocal foldmethod=syntax<CR>
 nnoremap za zA
