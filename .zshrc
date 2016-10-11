@@ -93,6 +93,8 @@ source $ZSH/oh-my-zsh.sh
 # my stuff
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 case $os in
         "Darwin" )
                 #color output
