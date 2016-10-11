@@ -1,0 +1,12 @@
+[user]
+	email = ratsur@microsoft.com
+	name = Ratan Rai Sur
+[push]
+	default = simple
+[alias]
+        co = checkout
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -R
+	show = diff-so-fancy | less --tabs=4 -R
+[azureml]
+	userSet = true
