@@ -109,7 +109,6 @@ case $os in
                 [ "$(ls -A ~/Pictures/apod)" ] && echo "You have astronomy pictures for review!"
                 #move to trash instead of deleting forever
                 alias rm='trash'
-                alias tmux='tmux -2'
                 ;;
         "Linux" )
                 #color output
@@ -117,7 +116,6 @@ case $os in
                 #ls aliases
                 alias l='ls -AlhF'
                 alias la='ls -A'
-                alias tmux="TERM=screen-256color tmux"
                 export VISUAL="nvim"
                 alias c="xclip -selection clipboard"
                 alias v="xclip -o"
@@ -129,6 +127,7 @@ esac
 BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 #other aliases
+alias tmux='tmux -2'
 alias rr='rm -r'
 alias gs='git status'
 alias gd='git diff'
