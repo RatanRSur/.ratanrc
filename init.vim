@@ -3,6 +3,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'prendradjaja/vim-vertigo'
+Plug 'SirVer/ultisnips'
 Plug 'ciaranm/detectindent'
 Plug 'chriskempson/base16-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
