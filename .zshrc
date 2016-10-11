@@ -92,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
 ####################
 # my stuff
 #
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 case $os in
         "Darwin" )
                 #color output
