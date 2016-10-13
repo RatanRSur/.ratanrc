@@ -1,16 +1,5 @@
 # Path to your oh-my-zsh installation.
-
-os=`uname -s`
-case $os in
-        "Darwin" )
-                export ZSH=/Users/ratan/.oh-my-zsh;;
-        "Linux" )
-                export ZSH=/home/ratan/.oh-my-zsh;;
-esac
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dieter"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -22,7 +11,6 @@ plugins=(git autojump brew)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -39,39 +27,41 @@ source $ZSH/oh-my-zsh.sh
 #
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+#[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+os=`uname -s`
 case $os in
-        "Darwin" )
-                #color output
-                export CLICOLOR=1
-                export LSCOLORS=exfxcxdxbxegedabagacad
-                #ls aliases
-                alias l='ls -GAlFh'
-                alias la='ls -GA'
-                #brew stuff
-                alias brewup="brew update -all && brew upgrade"
-                alias caskup="brew cask list | xargs brew cask install"
-                #nasa apod stuff
-                /bin/rm -f ~/Pictures/apod/.DS_store
-                [ "$(ls -A ~/Pictures/apod)" ] && echo "You have astronomy pictures for review!"
-                #move to trash instead of deleting forever
-                alias rm='trash'
-                ;;
-        "Linux" )
-                #color output
-                export LS_COLORS=$LS_COLORS:'di=0;36:ow=0;37'
-                #ls aliases
-                alias l='ls -AlhF'
-                alias la='ls -A'
-                export VISUAL="nvim"
-                alias c="xclip -selection clipboard"
-                alias v="xclip -o"
-                export PATH=~/bin:$PATH
-                #work stuff
-                [[ "$AZUREML_PROFILE" != "" ]] || . "$HOME/.azureml_profile"
-                ;;
+    "Darwin" )
+        export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin"
+        #color output
+        export CLICOLOR=1
+        export LSCOLORS=exfxcxdxbxegedabagacad
+        #ls aliases
+        alias l='ls -GAlFh'
+        alias la='ls -GA'
+        #brew stuff
+        alias brewup="brew update -all && brew upgrade"
+        alias caskup="brew cask list | xargs brew cask install"
+        #nasa apod stuff
+        /bin/rm -f ~/Pictures/apod/.DS_store
+        [ "$(ls -A ~/Pictures/apod)" ] && echo "You have astronomy pictures for review!"
+        #move to trash instead of deleting forever
+        alias rm='trash'
+        ;;
+    "Linux" )
+        #color output
+        export LS_COLORS=$LS_COLORS:'di=0;36:ow=0;37'
+        #ls aliases
+        alias l='ls -AlhF'
+        alias la='ls -A'
+        export VISUAL="nvim"
+        alias c="xclip -selection clipboard"
+        alias v="xclip -o"
+        export PATH=~/bin:$PATH
+        #work stuff
+        [[ "$AZUREML_PROFILE" != "" ]] || . "$HOME/.azureml_profile"
+        ;;
 esac
 BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
@@ -88,43 +78,43 @@ alias g14='g++ --std=c++14'
 
 mkcd()
 {
-        dir="$*";
-        mkdir -p "$dir" && cd "$dir";
+    dir="$*";
+    mkdir -p "$dir" && cd "$dir";
 }
 
 #function for pdflatex compilation with entr
 latexmode()
 {
-        ls "$1" | entr -c pdflatex --halt-on-error "$1"
+    ls "$1" | entr -c pdflatex --halt-on-error "$1"
 }
 
 ssh192()
 {
-        username="$1"
-        target="$2"
-        ssh "$username"@192.168.0."$2"
+    username="$1"
+    target="$2"
+    ssh "$username"@192.168.0."$2"
 }
 
 man() {
-env \
-LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-LESS_TERMCAP_md=$(printf "\e[1;31m") \
-LESS_TERMCAP_me=$(printf "\e[0m") \
-LESS_TERMCAP_se=$(printf "\e[0m") \
-LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-LESS_TERMCAP_ue=$(printf "\e[0m") \
-LESS_TERMCAP_us=$(printf "\e[1;32m") \
-man "$@"
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
 }
 
 #syntax highlighting
 case $os in
-        "Darwin" )
-                source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-                ;;
-        "Linux" )
-                source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-                export PATH=$PATH:/opt/anaconda3/bin
-                export PATH=$PATH:/usr/bin/vendor_perl
-                ;;
+    "Darwin" )
+        source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        ;;
+    "Linux" )
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        export PATH=$PATH:/opt/anaconda3/bin
+        export PATH=$PATH:/usr/bin/vendor_perl
+        ;;
 esac
