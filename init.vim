@@ -54,7 +54,7 @@ set listchars+=precedes:« " LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, 
 set listchars+=trail:•    " BULLET (U+2022, UTF-8: E2 80 A2)
 autocmd InsertEnter * set listchars-=trail:•
 autocmd InsertLeave * set listchars+=trail:•
-let &l:colorcolumn=join(range(101, 999), ',')
+let &colorcolumn=join(range(101, 999), ',')
 set formatoptions+=j "smart joining of comments
 set nojoinspaces
 set wildmode=longest:full,full
