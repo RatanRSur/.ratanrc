@@ -33,7 +33,7 @@ setopt HIST_REDUCE_BLANKS
 os=`uname -s`
 case $os in
     "Darwin" )
-        export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin"
+        export PATH=~/anaconda3/bin:"$PATH"
         #color output
         export CLICOLOR=1
         export LSCOLORS=exfxcxdxbxegedabagacad
