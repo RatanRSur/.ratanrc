@@ -27,9 +27,9 @@ source $ZSH/oh-my-zsh.sh
 #
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-#[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 os=`uname -s`
 case $os in
     "Darwin" )
