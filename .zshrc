@@ -34,6 +34,7 @@ os=`uname -s`
 case $os in
     "Darwin" )
         export PATH=~/anaconda3/bin:"$PATH"
+        export PATH=~/anaconda2/bin:"$PATH"
         #color output
         export CLICOLOR=1
         export LSCOLORS=exfxcxdxbxegedabagacad
@@ -50,6 +51,8 @@ case $os in
         alias rm='trash'
         ;;
     "Linux" )
+        export PATH=$PATH:/opt/anaconda3/bin
+        export PATH=$PATH:/usr/bin/vendor_perl
         #color output
         export LS_COLORS=$LS_COLORS:'di=0;36:ow=0;37'
         #ls aliases
@@ -114,7 +117,5 @@ case $os in
         ;;
     "Linux" )
         source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-        export PATH=$PATH:/opt/anaconda3/bin
-        export PATH=$PATH:/usr/bin/vendor_perl
         ;;
 esac
