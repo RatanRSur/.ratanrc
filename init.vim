@@ -153,8 +153,8 @@ function! s:nice_next(cmd)
     endif
 endfunction
 
-nnoremap <silent> n :call <SID>nice_next('n')<cr>
-nnoremap <silent> N :call <SID>nice_next('N')<cr>
+nnoremap n :silent! :call <SID>nice_next('n')<cr>
+nnoremap N :silent! :call <SID>nice_next('N')<cr>
 """""""""""""""""""''
 
 "go down visually if no count, by line number if count
