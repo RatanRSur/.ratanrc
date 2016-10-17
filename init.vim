@@ -131,14 +131,6 @@ let g:formatters_c = ['cust_c']
 let g:formatdef_scalafmt = "'scalafmt --style defaultWithAlign --maxColumn 100'"
 let g:formatters_scala = ['scalafmt']
 
-"turn on manual folding always
-"turn syntax folding on if file is longer than my screen
-setlocal foldmethod=manual
-autocmd! BufWinEnter * if line('$')>winheight(0) | setlocal foldmethod=syntax | endif
-nnoremap <leader>z :setlocal foldmethod=syntax<CR>
-nnoremap za zA
-nnoremap zA za
-
 let g:neomake_cpp_enable_markers=['clang']
 let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall"]
 autocmd! BufWritePost * Neomake "neomake stuff
