@@ -17,6 +17,7 @@ Plug 'sjl/vitality.vim'
 Plug 'wellle/targets.vim'
 Plug 'JuliaLang/julia-vim'
 Plug 'derekwyatt/vim-scala', { 'for' : 'scala'}
+Plug 'ensime/ensime-vim'
 Plug 'lervag/vimtex'
 Plug 'moll/vim-bbye'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
@@ -134,6 +135,12 @@ let g:formatters_scala = ['scalafmt']
 let g:neomake_cpp_enable_markers=['clang']
 let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall"]
 autocmd! BufWritePost * Neomake "neomake stuff
+
+"ensime stuff
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <leader>t :EnTypeCheck<CR>
+au FileType scala nnoremap <leader>? :EnDeclarationSplit v<CR>
+let EnErrorStyle='Underlined'
 
 "trying nice next and Next searching
 """"""""""""""""''
