@@ -7,7 +7,7 @@ ZSH_THEME="dieter"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git autojump brew)
+plugins=(git autojump)
 
 # User configuration
 
