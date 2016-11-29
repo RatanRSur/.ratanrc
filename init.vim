@@ -130,7 +130,7 @@ let g:formatdef_cust_cpp = '"astyle --mode=c --style=java --indent=spaces=4 -xGf
 let g:formatters_cpp = ['cust_cpp']
 let g:formatdef_cust_c = '"astyle --mode=c --style=java --indent=spaces=4 -fpHUxek3W3jOocxC98"'
 let g:formatters_c = ['cust_c']
-let g:formatdef_scalafmt = "'scalafmt --style defaultWithAlign --maxColumn 100'"
+let g:formatdef_scalafmt = '"scalafmt --config ~/.scalafmt.conf --stdin"'
 let g:formatters_scala = ['scalafmt']
 
 let g:neomake_cpp_enable_markers=['clang']
