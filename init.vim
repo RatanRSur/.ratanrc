@@ -157,6 +157,16 @@ nnoremap n :silent! :call <SID>nice_next('n')<cr>
 nnoremap N :silent! :call <SID>nice_next('N')<cr>
 """""""""""""""""""''
 
+" don't let Ctrl e scrool past end of file
+""""""""""""""""''
+function! s:restrictedctrle()
+    if line('w$') != line('$')
+        execute "normal! \<C-E>"
+    endif
+endfunction
+nnoremap <C-e> :silent! :call <SID>restrictedctrle()<cr>
+"""""""""""""""""""''
+
 "go down visually if no count, by line number if count
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
