@@ -69,11 +69,13 @@ esac
 BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 #other aliases
+alias n='nvim'
+alias e='exit'
 alias tmux='tmux -2'
 alias rr='rm -r'
 alias gs='git status'
 alias gd='git diff'
-alias gl='git log --graph --format="%Cgreen%h %Cblue%an %Creset%s %Cred%d%Creset"'
+alias gl='git log --graph --left-right --format="%Cgreen%h %Cblue%an %Creset%s %Cred%d%Creset"'
 alias grl='gl | head -20'
 alias dirty='nvim `git diff --name-only`'
 alias g11='g++ --std=c++11'

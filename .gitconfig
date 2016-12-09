@@ -1,12 +1,18 @@
+[core]
+    editor = nvim
+[filter "lfs"]
+    clean = git lfs clean %f
+    smudge = git lfs smudge %f
+    required = true
 [user]
-	email = ratsur@microsoft.com
-	name = Ratan Rai Sur
+    email = ratan.r.sur@gmail.com
+    name = Ratan Rai Sur
 [push]
-	default = simple
+    default = simple
 [alias]
-        co = checkout
+    co = checkout
 [pager]
-	diff = diff-so-fancy | less --tabs=4 -R
-	show = diff-so-fancy | less --tabs=4 -R
+    diff = diff-so-fancy | less --tabs=4 -R
+    show = diff-so-fancy | less --tabs=4 -R
 [azureml]
-	userSet = true
+    userSet = true
