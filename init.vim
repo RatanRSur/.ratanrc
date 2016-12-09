@@ -120,7 +120,8 @@ let base16colorspace=256
 set background=dark
 highlight Comment cterm=italic
 highlight Search cterm=reverse ctermbg=NONE ctermfg=NONE
-highlight LineNr ctermbg=black
+highlight Error term=reverse cterm=bold ctermfg=Red ctermbg=None guifg=Red guibg=None
+match Error /\%121v.\+/
 
 "code beautification
 noremap <Leader>a :Autoformat<CR>
