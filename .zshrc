@@ -7,7 +7,7 @@ ZSH_THEME="dieter"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git autojump)
+plugins=(git autojump zsh-syntax-highlighting)
 
 # User configuration
 
@@ -111,13 +111,3 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
         man "$@"
 }
-
-#syntax highlighting
-case $os in
-    "Darwin" )
-        source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-        ;;
-    "Linux" )
-        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-        ;;
-esac
