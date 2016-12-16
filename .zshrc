@@ -51,7 +51,7 @@ case $os in
         alias rm='trash'
         ;;
     "Linux" )
-        export PATH=$PATH:/opt/anaconda3/bin
+        export PATH=$PATH:/opt/anaconda/bin
         export PATH=$PATH:/usr/bin/vendor_perl
         #color output
         export LS_COLORS=$LS_COLORS:'di=0;36:ow=0;37'
