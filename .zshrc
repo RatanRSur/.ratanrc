@@ -62,6 +62,7 @@ case $os in
         alias c="xclip -selection clipboard"
         alias v="xclip -o"
         export PATH=~/bin:$PATH
+        export BROWSER="chromium %s"
         #work stuff
         [[ "$AZUREML_PROFILE" != "" ]] || . "$HOME/.azureml_profile"
         ;;
