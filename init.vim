@@ -134,7 +134,7 @@ colorscheme base16-tomorrow
 let base16colorspace=256
 set background=dark
 highlight Comment cterm=italic
-highlight Search cterm=reverse ctermbg=NONE ctermfg=NONE
+highlight Search cterm=reverse,underline ctermbg=NONE ctermfg=NONE
 highlight Error term=reverse cterm=bold ctermfg=Red ctermbg=None guifg=Red guibg=None
 "match Error /\%121v.\+/
 
