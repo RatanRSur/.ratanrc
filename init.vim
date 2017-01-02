@@ -3,7 +3,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'prendradjaja/vim-vertigo'
-Plug 'SirVer/ultisnips'
 Plug 'ciaranm/detectindent'
 Plug 'chriskempson/base16-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -22,8 +21,17 @@ Plug 'lervag/vimtex'
 Plug 'moll/vim-bbye'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
+"testing zone
+Plug 'SirVer/ultisnips'
+Plug 'airblade/vim-gitgutter'
+Plug 'mileszs/ack.vim'
 call plug#end()
 let g:plug_threads = 32
+
+"for ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 set undofile
 set undodir=~/.vim/undodir
@@ -77,6 +85,8 @@ nnoremap <Leader>p :bp<CR>
 
 " comment and copy
 nnoremap <Leader>cp :let @i=@0<CR>:call NERDComment('n', "yank")<CR>p:let @0=@i<CR>
+
+nnoremap <Leader>g :Ack!<Space>
 
 "stop that stupid window from popping up
 map q: :q
