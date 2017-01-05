@@ -1,3 +1,4 @@
+* make 120+ error matching dependent on filetype
 * make tmux able to copy to system clipboard
     * macos
     * linux

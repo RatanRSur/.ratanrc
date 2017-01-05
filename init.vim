@@ -135,7 +135,7 @@ set background=dark
 highlight Comment cterm=italic
 highlight Search cterm=reverse ctermbg=NONE ctermfg=NONE
 highlight Error term=reverse cterm=bold ctermfg=Red ctermbg=None guifg=Red guibg=None
-match Error /\%121v.\+/
+"match Error /\%121v.\+/
 
 "code beautification
 noremap <Leader>a :Autoformat<CR>
