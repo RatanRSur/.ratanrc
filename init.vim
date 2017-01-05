@@ -88,6 +88,9 @@ nnoremap <Leader>cp :let @i=@0<CR>:call NERDComment('n', "yank")<CR>p:let @0=@i<
 
 nnoremap <Leader>g :Ack!<Space>
 
+"search for visually selected test
+vnoremap // "iy/<C-R>i<CR>
+
 "stop that stupid window from popping up
 map q: :q
 
