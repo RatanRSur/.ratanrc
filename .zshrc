@@ -51,11 +51,8 @@ case $os in
         alias rm='trash'
         ;;
     "Linux" )
-        export PATH=$PATH:/opt/anaconda/bin
-        export PATH=$PATH:/usr/bin/vendor_perl
-        #color output
+        #ls stuff
         export LS_COLORS=$LS_COLORS:'di=0;36:ow=0;37'
-        #ls aliases
         alias l='ls -AlhF'
         alias la='ls -A'
         export VISUAL="nvim"
@@ -65,6 +62,8 @@ case $os in
         export BROWSER="chromium %s"
         #work stuff
         [[ "$AZUREML_PROFILE" != "" ]] || . "$HOME/.azureml_profile"
+        export LD_LIBRARY_PATH=/usr/local/mpi/lib:$LD_LIBRARY_PATH
+        export PATH=/usr/local/mpi/bin:$PATH
         ;;
 esac
 BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
