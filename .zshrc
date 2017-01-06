@@ -55,7 +55,10 @@ case $os in
         export LS_COLORS=$LS_COLORS:'di=0;36:ow=0;37'
         alias l='ls -AlhF'
         alias la='ls -A'
-        export VISUAL="nvim"
+        if hash nvim 2>/dev/null; then
+            export EDITOR="nvim"
+            export VISUAL="nvim"
+        fi
         alias c="xclip -selection clipboard"
         alias v="xclip -o"
         export PATH=~/bin:$PATH
