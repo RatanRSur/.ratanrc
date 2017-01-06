@@ -102,6 +102,18 @@ nmap <silent> <BS> 
 nnoremap * *N
 nnoremap c* *Ncgn
 
+" auto horizontal or vertical help based on window dimensions
+function! s:ShowHelp(tag) abort
+  if (3*winheight('0')) < winwidth('0') " The 3 is a heuristic
+    execute 'vertical help '.a:tag
+  else
+    execute 'help '.a:tag
+  endif
+endfunction
+
+command! -nargs=1 H call s:ShowHelp(<f-args>)
+cabbrev h H
+
 "vim vertigo stuff
 nnoremap <silent> <Leader>j :<C-U>VertigoDown n<CR>
 vnoremap <silent> <Leader>j :<C-U>VertigoDown v<CR>
