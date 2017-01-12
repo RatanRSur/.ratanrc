@@ -81,9 +81,9 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader><Leader>q :q!<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <Leader>n :bn<CR>
+nnoremap <Leader>n :bp<CR>
 nnoremap <Leader>d :Bdelete<CR>
-nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>p :bn<CR>
 
 " comment and copy
 nnoremap <Leader>cp :let @i=@0<CR>:call NERDComment('n', "yank")<CR>p:let @0=@i<CR>
