@@ -167,8 +167,8 @@ let g:neomake_cpp_clang_args = ["-std=c++11", "-Wextra", "-Wall"]
 autocmd! BufWritePost * Neomake "neomake stuff
 
 "ensime stuff
-autocmd BufWritePost *.scala silent :EnTypeCheck
-nnoremap <leader>t :EnTypeCheck<CR>
+"autocmd BufWritePost *.scala silent :EnTypeCheck
+au FileType scala nnoremap <leader>t :EnTypeCheck<CR>
 au FileType scala nnoremap <leader>? :EnDeclarationSplit v<CR>
 let EnErrorStyle='Underlined'
 
