@@ -21,10 +21,11 @@ Plug 'lervag/vimtex'
 Plug 'moll/vim-bbye'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
-"testing zone
-Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
+Plug 'craigemery/vim-autotag'
+"testing zone
+Plug 'SirVer/ultisnips'
 call plug#end()
 let g:plug_threads = 32
 
