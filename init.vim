@@ -25,6 +25,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'craigemery/vim-autotag'
 "testing zone
+Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
 call plug#end()
 let g:plug_threads = 32
