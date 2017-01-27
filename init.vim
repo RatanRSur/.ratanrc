@@ -170,7 +170,6 @@ autocmd! BufWritePost * Neomake "neomake stuff
 "ensime stuff
 "autocmd BufWritePost *.scala silent :EnTypeCheck
 au FileType scala nnoremap <leader>t :EnTypeCheck<CR>
-au FileType scala nnoremap <leader>? :EnDeclarationSplit v<CR>
 let EnErrorStyle='Underlined'
 
 "trying nice next and Next searching
