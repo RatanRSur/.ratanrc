@@ -32,7 +32,7 @@ let g:plug_threads = 32
 
 "for ack.vim
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+    let g:ackprg = 'ag --vimgrep'
 endif
 
 set undofile
@@ -115,11 +115,11 @@ nnoremap c* *Ncgn
 
 " auto horizontal or vertical help based on window dimensions
 function! s:ShowHelp(tag) abort
-  if (3*winheight('0')) < winwidth('0') " The 3 is a heuristic
-    execute 'vertical help '.a:tag
-  else
-    execute 'help '.a:tag
-  endif
+    if (3*winheight('0')) < winwidth('0') " The 3 is a heuristic
+        execute 'vertical help '.a:tag
+    else
+        execute 'help '.a:tag
+    endif
 endfunction
 
 command! -nargs=1 H call s:ShowHelp(<f-args>)
@@ -218,9 +218,9 @@ let g:lexical#spell_key = '<leader>s'
 
 let g:deoplete#enable_at_startup = 1 " Use deoplete.
 autocmd BufReadPost * inoremap <silent><expr> <TAB>
-                        \ pumvisible() ? "\<C-n>" :
-                        \ <SID>check_back_space() ? "\<TAB>" :
-                        \ deoplete#mappings#manual_complete()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ deoplete#mappings#manual_complete()
 
 function! s:check_back_space() abort "{{{
     let col = col('.') - 1
