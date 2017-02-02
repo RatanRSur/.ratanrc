@@ -65,7 +65,6 @@ case $os in
         export BROWSER="chromium %s"
         #work stuff
         [[ "$AZUREML_PROFILE" != "" ]] || . "$HOME/.azureml_profile"
-        export LD_LIBRARY_PATH=/usr/local/mpi/lib:$LD_LIBRARY_PATH
         export PATH=/usr/local/mpi/bin:$PATH
         ;;
 esac
