@@ -70,6 +70,8 @@ case $os in
 esac
 BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+#system independent exports
+export FZF_DEFAULT_OPTS='--color 16'
 #other aliases
 alias n='nvim'
 alias e='exit'

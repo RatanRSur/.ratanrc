@@ -228,18 +228,24 @@ function! s:check_back_space() abort "{{{
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
 
-"
 "fzf
+let g:fzf_colors = { 'fg':      ['fg', 'Normal'],
+                   \ 'bg':      ['bg', 'Normal'],
+                   \ 'hl':      ['fg', 'Comment'],
+                   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+                   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+                   \ 'hl+':     ['fg', 'Statement'],
+                   \ 'info':    ['fg', 'PreProc'],
+                   \ 'prompt':  ['fg', 'Conditional'],
+                   \ 'pointer': ['fg', 'Exception'],
+                   \ 'marker':  ['fg', 'Keyword'],
+                   \ 'spinner': ['fg', 'Label'],
+                   \ 'header':  ['fg', 'Comment'] }
 map <Leader>f :FZF<CR>
 map <Leader>` :FZF ~<CR>
-map <Leader>/ :FZF /<CR>
-nnoremap <silent> <Leader>v :call fzf#run({
-            \  'down': '50%',
-            \  'sink': 'botright split' })<CR>
+nnoremap <silent> <Leader>v :call fzf#run({'down': '50%', 'sink': 'botright split' })<CR>
 
-nnoremap <silent> <Leader>h :call fzf#run({
-            \   'right': winwidth('.') / 2,
-            \   'sink':  'vertical botright split' })<CR>
+nnoremap <silent> <Leader>h :call fzf#run({'right': winwidth('.') / 2, 'sink': 'vertical botright split'})<CR>
 
 let $FZF_DEFAULT_COMMAND='ag
             \ --ignore .git
