@@ -26,16 +26,14 @@ local host="${host_repr[$HOST]:-$HOST}%{$reset_color%}"
 # Compacted $PWD
 local pwd="%{$fg[blue]%}%~%{$reset_color%}"
 
-#PROMPT=' ${pwd} $(git_prompt_info)$(git_prompt_status)» '
 PROMPT=' ${pwd} $(git_prompt_info)» '
 if [ "$SSH_CONNECTION" ]; then
-    PROMPT='${user}@$(PROMPT)'
+    PROMPT="${user}@${host}$PROMPT"
 fi
 
 # i would prefer 1 icon that shows the "most drastic" deviation from HEAD,
 # but lets see how this works out
-#DISABLE_UNTRACKED_FILES_DIRTY=true
-#ZSH_THEME_GIT_PROMPT_UNTRACKED="foo"
+DISABLE_UNTRACKED_FILES_DIRTY=true
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%} %{$fg[yellow]%}ᝣ%{$fg[green]%}%{$reset_color%}"
