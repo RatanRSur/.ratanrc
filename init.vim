@@ -161,6 +161,8 @@ highlight Comment cterm=italic
 highlight Search cterm=reverse,underline ctermbg=NONE ctermfg=NONE
 highlight Error term=reverse cterm=bold ctermfg=Red ctermbg=None guifg=Red guibg=None
 highlight Folded ctermbg=Black
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterChangeDelete ctermfg=DarkYellow
 "match Error /\%121v.\+/
 
 "code beautification
