@@ -26,17 +26,32 @@ local host="${host_repr[$HOST]:-$HOST}%{$reset_color%}"
 # Compacted $PWD
 local pwd="%{$fg[blue]%}%~%{$reset_color%}"
 
-PROMPT=' ${pwd} $(git_prompt_info)» '
+function sexy_git_prompt() {
+
+    if [[ -n "$(command git rev-list HEAD..origin/$(git_current_branch) 2>/dev/null)" ]]
+    then
+        ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}"
+    else
+        ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}"
+    fi
+
+    if [[ $(git ls-files -m 2>/dev/null) ]]; then
+        ZSH_THEME_GIT_PROMPT_DIRTY=" ✘%{$reset_color%}"
+    else
+        ZSH_THEME_GIT_PROMPT_DIRTY=" ᝣ%{$reset_color%}"
+    fi
+    git_prompt_info
+}
+
+PROMPT=' ${pwd} $(sexy_git_prompt)'
 if [ "$SSH_CONNECTION" ]; then
     PROMPT="${user}@${host}$PROMPT"
 fi
 
 # i would prefer 1 icon that shows the "most drastic" deviation from HEAD,
 # but lets see how this works out
-DISABLE_UNTRACKED_FILES_DIRTY=true
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%} %{$fg[yellow]%}ᝣ%{$fg[green]%}%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}"
 
 # elaborate exitcode on the right when >0
