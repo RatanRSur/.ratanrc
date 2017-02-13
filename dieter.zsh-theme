@@ -28,7 +28,7 @@ local pwd="%{$fg[blue]%}%~%{$reset_color%}"
 
 function sexy_git_prompt() {
 
-    if [[ -n "$(command git rev-list HEAD..origin/$(git_current_branch) 2>/dev/null)" ]]
+    if [[ -n "$(command git rev-list HEAD..origin/master 2>/dev/null)" ]]
     then
         ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}"
     else
