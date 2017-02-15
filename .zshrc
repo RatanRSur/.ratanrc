@@ -84,6 +84,7 @@ alias grl='gl | head -20'
 alias dirty='nvim `git diff --name-only`'
 alias g11='g++ --std=c++11'
 alias g14='g++ --std=c++14'
+alias scala='scala -Dscala.color'
 
 mkcd()
 {
