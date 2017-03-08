@@ -56,6 +56,7 @@ set breakindent "better breaking
 set ignorecase
 set smartcase
 set virtualedit=block
+set inccommand=nosplit
 set breakindentopt=shift:2
 let &showbreak='⤷ '       " ARROW POINTING DOWNWARDS THEN CURVING RIGHTWARDS (U+2937, UTF-8: E2 A4 B7)
 set list                  " show whitespace
