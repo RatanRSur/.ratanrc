@@ -28,6 +28,7 @@ Plug 'craigemery/vim-autotag'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
 Plug 'floobits/floobits-neovim'
+Plug 'gcavallanti/vim-noscrollbar'
 call plug#end()
 let g:plug_threads = 32
 
@@ -75,7 +76,7 @@ set formatoptions+=j "smart joining of comments
 set nojoinspaces
 set wildmode=longest:full,full
 set hidden
-
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %{noscrollbar#statusline(20,'-','█',['▐'],['▌'])}
 set foldopen-=search
 set foldmethod=syntax
 set foldlevel=99
