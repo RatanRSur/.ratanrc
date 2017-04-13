@@ -86,6 +86,18 @@ alias g11='g++ --std=c++11'
 alias g14='g++ --std=c++14'
 alias scala='scala -Dscala.color'
 
+backup() {
+    for i
+    do mv "$i" "$i.backup"
+    done
+}
+
+restore() {
+    for i
+    do mv "$i" $(echo "$i" | sed 's/\.backup$//')
+    done
+}
+
 mkcd()
 {
     dir="$*";
