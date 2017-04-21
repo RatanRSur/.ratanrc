@@ -59,8 +59,8 @@ case $os in
             export EDITOR="nvim"
             export VISUAL="nvim"
         fi
-        alias c="xclip -selection clipboard"
-        alias v="xclip -o"
+        alias c="xclip -i -selection clipboard"
+        alias v="xclip -o -selection clipboard"
         export PATH=~/bin:$PATH
         export BROWSER="chromium %s"
         #work stuff
