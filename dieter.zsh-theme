@@ -35,7 +35,7 @@ function sexy_git_prompt() {
         ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}"
     fi
 
-    if [[ $(git ls-files -m 2>/dev/null) ]]; then
+    if [[ $(git diff-index --name-only HEAD 2>/dev/null) ]]; then
         ZSH_THEME_GIT_PROMPT_DIRTY=" ✘%{$reset_color%}"
     else
         ZSH_THEME_GIT_PROMPT_DIRTY=" ᝣ%{$reset_color%}"
