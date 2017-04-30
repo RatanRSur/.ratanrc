@@ -17,4 +17,4 @@
 [azureml]
     userSet = true
 [core]
-	excludesfile = /home/ratan/.global_ignore
+	excludesfile = ~/.global_ignore
