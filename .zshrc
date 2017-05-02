@@ -78,7 +78,6 @@ alias e='exit'
 alias tmux='tmux -2'
 alias rr='rm -r'
 alias gs='git status'
-alias gd='git diff'
 alias gl='git log --graph --left-right --format="%Cgreen%h %Cblue%an %Creset%s %Cred%d%Creset"'
 function grl {
     gl "$@" |
@@ -93,8 +92,6 @@ function dirty {
         nvim $(git --no-pager diff --name-only)
     fi
 }
-alias g11='g++ --std=c++11'
-alias g14='g++ --std=c++14'
 alias scala='scala -Dscala.color'
 
 backup() {
