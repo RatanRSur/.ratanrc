@@ -84,7 +84,15 @@ function grl {
     gl "$@" |
     head -$(($(stty size | cut -d ' ' -f 1) / 2))
 }
-alias dirty='nvim `git diff --name-only`'
+function dirty {
+    dirty_files=$(git --no-pager diff --name-only)
+    if [ -z $dirty_files ]
+    then
+        return 1
+    else
+        nvim $(git --no-pager diff --name-only)
+    fi
+}
 alias g11='g++ --std=c++11'
 alias g14='g++ --std=c++14'
 alias scala='scala -Dscala.color'
