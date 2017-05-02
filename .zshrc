@@ -80,7 +80,10 @@ alias rr='rm -r'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log --graph --left-right --format="%Cgreen%h %Cblue%an %Creset%s %Cred%d%Creset"'
-alias grl="gl | head -$(($(stty size | cut -d ' ' -f 1) / 2))"
+function grl {
+    gl "$@" |
+    head -$(($(stty size | cut -d ' ' -f 1) / 2))
+}
 alias dirty='nvim `git diff --name-only`'
 alias g11='g++ --std=c++11'
 alias g14='g++ --std=c++14'
