@@ -45,6 +45,7 @@ set splitright
 set relativenumber
 set cursorline
 set ruler
+set mouse=a
 set expandtab
 set shiftwidth=4
 set softtabstop=4
