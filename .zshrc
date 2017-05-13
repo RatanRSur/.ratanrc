@@ -66,6 +66,10 @@ case $os in
         #work stuff
         [[ "$AZUREML_PROFILE" != "" ]] || . "$HOME/.azureml_profile"
         export PATH=/usr/local/mpi/bin:$PATH
+        function del {
+            mkdir ~/.trash
+            mv "$@" ~/.trash
+        }
         ;;
 esac
 BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
