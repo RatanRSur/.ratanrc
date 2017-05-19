@@ -84,7 +84,7 @@ alias rr='rm -r'
 alias gs='git status'
 alias gl='git log --graph --left-right --format="%Cgreen%h %Cblue%an %Creset%s %Cred%d%Creset"'
 function grl {
-    gl -n $(($(stty size | cut -d ' ' -f 1) / 2)) "$@" | cat
+    gl | head -$(($(stty size | cut -d ' ' -f 1) / 2)) "$@"
 }
 function dirty {
     dirty_files=$(git --no-pager diff --name-only)
