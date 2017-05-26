@@ -20,7 +20,8 @@ Plug 'ensime/ensime-vim'
 Plug 'lervag/vimtex'
 Plug 'moll/vim-bbye'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do' : '.install --all'}
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'craigemery/vim-autotag'
@@ -82,6 +83,10 @@ set foldopen-=search
 set foldmethod=syntax
 set foldlevel=99
 set foldcolumn=1
+""" autoread
+set autoread
+au FocusGained,BufEnter * :silent! !
+"""
 set foldtext=MyFoldText()
 function! MyFoldText()
     return "▶ ". getline(v:foldstart)
@@ -247,6 +252,7 @@ let g:fzf_colors = { 'fg':      ['fg', 'Normal'],
                    \ 'spinner': ['fg', 'Label'],
                    \ 'header':  ['fg', 'Comment'] }
 map <Leader>f :FZF<CR>
+map <Leader>b :Buffers<CR>
 map <Leader>` :FZF ~<CR>
 map <Leader>% :FZF %:h<CR>
 nnoremap <silent> <Leader>v :call fzf#run({'down': '50%', 'sink': 'botright split' })<CR>
