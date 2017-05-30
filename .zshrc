@@ -1,3 +1,4 @@
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dieter"
@@ -64,7 +65,7 @@ case $os in
         export PATH=~/bin:$PATH
         export BROWSER="chromium %s"
         #work stuff
-        [[ "$AZUREML_PROFILE" != "" ]] || . "$HOME/.azureml_profile"
+        [[ "$MMLSPARK_PROFILE" != "" ]] || . "$HOME/.mmlspark_profile"
         export PATH=/usr/local/mpi/bin:$PATH
         function del {
             mkdir ~/.trash
