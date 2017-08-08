@@ -26,6 +26,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'craigemery/vim-autotag'
 "testing zone
+Plug 'alvan/vim-closetag'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
 Plug 'floobits/floobits-neovim'
@@ -153,6 +154,8 @@ augroup highlight_follows_vim
     autocmd FocusGained * set cursorline
     autocmd FocusLost * set nocursorline
 augroup END
+
+let g:closetag_filenames = '*.xml,*.html,*.xhtml,*.phtml'
 
 "make arrow keys do something useful
 nnoremap <silent> <Left> :vertical resize +2<CR>
