@@ -18,3 +18,5 @@
     userSet = true
 [core]
 	excludesfile = ~/.global_ignore
+[merge]
+	conflictstyle = diff3
