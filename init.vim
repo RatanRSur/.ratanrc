@@ -259,7 +259,6 @@ map <Leader>b :Buffers<CR>
 map <Leader>` :FZF ~<CR>
 map <Leader>% :FZF %:h<CR>
 nnoremap <silent> <Leader>v :call fzf#run({'down': '50%', 'sink': 'botright split' })<CR>
-
 nnoremap <silent> <Leader>h :call fzf#run({'right': winwidth('.') / 2, 'sink': 'vertical botright split'})<CR>
 
 let $FZF_DEFAULT_COMMAND='ag
