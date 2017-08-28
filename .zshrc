@@ -84,7 +84,6 @@ alias tmux='tmux -2'
 alias rr='rm -r'
 alias gs='git status'
 alias gl='git log --graph --left-right --format="%Cgreen%h %Cblue%an %Creset%s %Cred%d%Creset"'
-alias gd='git diff --color-words'
 function grl {
     gl | head -$(($(stty size | cut -d ' ' -f 1) / 2)) "$@"
 }
