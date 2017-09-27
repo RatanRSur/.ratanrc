@@ -20,3 +20,5 @@
 	excludesfile = ~/.global_ignore
 [merge]
 	conflictstyle = diff3
+[rerere]
+	enabled = true
