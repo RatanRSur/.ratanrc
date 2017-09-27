@@ -56,10 +56,6 @@ case $os in
         export LS_COLORS=$LS_COLORS:'di=0;36:ow=0;37'
         alias l='ls -AlhF'
         alias la='ls -A'
-        if hash nvim 2>/dev/null; then
-            export EDITOR="nvim"
-            export VISUAL="nvim"
-        fi
         alias c="xclip -i -selection clipboard"
         alias v="xclip -o -selection clipboard"
         export PATH=~/bin:$PATH
@@ -73,6 +69,10 @@ case $os in
         }
         ;;
 esac
+if hash nvim 2>/dev/null; then
+    export EDITOR="nvim"
+    export VISUAL="nvim"
+fi
 BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 #system independent exports
