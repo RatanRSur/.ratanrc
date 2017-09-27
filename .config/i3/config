@@ -184,7 +184,7 @@ bindsym $mod+r mode "resize"
 bar {
         font pango:Consolas 10
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        colors{
+        colors {
             separator $base03
             background $base00
             statusline $base05
