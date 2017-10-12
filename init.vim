@@ -44,6 +44,7 @@ set undodir=~/.vim/undodir
 set noswapfile
 set splitbelow
 set splitright
+set number
 set relativenumber
 set cursorline
 set ruler
