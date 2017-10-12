@@ -218,6 +218,7 @@ nnoremap K k"kdd"kpkJ
 "lexical stuff
 augroup lexical
     autocmd!
+    autocmd FileType md call lexical#init()
     autocmd FileType tex call lexical#init()
     autocmd FileType txt call lexical#init()
     autocmd FileType text call lexical#init({'spell':0})
