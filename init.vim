@@ -100,7 +100,6 @@ nnoremap <Leader><Leader>w :w!<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader><Leader>q :q!<CR>
 nnoremap <Leader>x :x<CR>
-nnoremap <Leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>d :Bdelete<CR>
 nnoremap <Leader>p :bp<CR>
@@ -250,7 +249,8 @@ let g:fzf_colors = { 'fg':      ['fg', 'Normal'],
                    \ 'marker':  ['fg', 'Keyword'],
                    \ 'spinner': ['fg', 'Label'],
                    \ 'header':  ['fg', 'Comment'] }
-map <Leader>f :FZF<CR>
+map <Leader>e :FZF<CR>
+map <Leader>f :FZF 
 map <Leader>b :Buffers<CR>
 map <Leader>` :FZF ~<CR>
 map <Leader>% :FZF %:h<CR>
