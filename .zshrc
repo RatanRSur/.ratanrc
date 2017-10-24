@@ -60,7 +60,7 @@ case $os in
         export PATH=~/bin:$PATH
         export BROWSER="chromium %s"
         #work stuff
-        [[ "$MMLSPARK_PROFILE" != "" ]] || . "$HOME/.mmlspark_profile"
+        [[ "$MMLSPARK_PROFILE" != "" ]] && . "$HOME/.mmlspark_profile"
         export PATH=/usr/local/mpi/bin:$PATH
         function del {
             mkdir ~/.trash
