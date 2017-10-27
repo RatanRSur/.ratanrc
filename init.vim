@@ -164,9 +164,10 @@ nnoremap <silent> <Down> :resize +2<CR>
 
 inoremap <C-c> <Esc>
 syntax enable
-colorscheme base16-tomorrow
-let base16colorspace=256
-set background=dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 highlight Comment cterm=italic
 highlight Search cterm=reverse,underline ctermbg=NONE ctermfg=NONE
 highlight Error term=reverse cterm=bold ctermfg=Red ctermbg=None guifg=Red guibg=None
