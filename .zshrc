@@ -47,7 +47,9 @@ case $os in
         #nasa apod stuff
         [ "$(ls -A ~/Pictures/apod | grep -v DS_store)" ] && echo "You have astronomy pictures for review!"
         #move to trash instead of deleting forever
-        alias rm='trash'
+        if hash trash 2>/dev/null; then
+            alias rm='trash'
+        fi
         ;;
     "Linux" )
         #ls stuff
