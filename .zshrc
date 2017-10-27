@@ -45,8 +45,7 @@ case $os in
         #brew stuff
         alias brewup="brew update -all && brew upgrade"
         #nasa apod stuff
-        /bin/rm -f ~/Pictures/apod/.DS_store
-        [ "$(ls -A ~/Pictures/apod)" ] && echo "You have astronomy pictures for review!"
+        [ "$(ls -A ~/Pictures/apod | grep -v DS_store)" ] && echo "You have astronomy pictures for review!"
         #move to trash instead of deleting forever
         alias rm='trash'
         ;;
