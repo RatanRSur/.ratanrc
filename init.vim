@@ -16,6 +16,7 @@ Plug 'sjl/vitality.vim'
 Plug 'wellle/targets.vim'
 Plug 'JuliaLang/julia-vim'
 Plug 'derekwyatt/vim-scala', { 'for' : 'scala'}
+Plug 'rust-lang/rust.vim'
 Plug 'lervag/vimtex'
 Plug 'moll/vim-bbye'
 Plug 'ap/vim-css-color', { 'for' : 'css'}
