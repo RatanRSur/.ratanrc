@@ -62,7 +62,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}"
 
 # elaborate exitcode on the right when >0
-return_code_enabled="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+return_code_enabled="%(?.%{$fg[green]%}.%{$fg[red]%})%? ↵%{$reset_color%}"
 return_code_disabled=
 return_code=$return_code_enabled
 
