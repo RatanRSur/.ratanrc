@@ -44,6 +44,14 @@ case $os in
         alias la='ls -GA'
         #brew stuff
         alias brewup="brew update -all && brew upgrade"
+        function update {
+            brewup &&
+            brew cask upgrade &&
+            nvim -c 'PlugUpdate | q | q' &&
+            tldr --update &&
+            julia -e 'Pkg.update(); exit()' &&
+            cabal update
+        }
         #nasa apod stuff
         [ "$(ls -A ~/Pictures/apod | grep -v DS_store)" ] && echo "You have astronomy pictures for review!"
         #move to trash instead of deleting forever
