@@ -31,6 +31,9 @@ setopt HIST_REDUCE_BLANKS
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+
+export PATH=~/bin:$PATH
+
 os=`uname -s`
 case $os in
     "Darwin" )
@@ -66,7 +69,6 @@ case $os in
         alias la='ls -A'
         alias c="xclip -i -selection clipboard"
         alias v="xclip -o -selection clipboard"
-        export PATH=~/bin:$PATH
         export BROWSER="chromium %s"
         #work stuff
         [[ "$MMLSPARK_PROFILE" != "" ]] && . "$HOME/.mmlspark_profile"
