@@ -31,7 +31,7 @@ Plug 'alvan/vim-closetag'
 Plug 'SirVer/ultisnips'
 Plug 'floobits/floobits-neovim'
 call plug#end()
-let g:plug_threads = 32
+let g:plug_threads = 16
 
 "for ack.vim
 if executable('ag')
