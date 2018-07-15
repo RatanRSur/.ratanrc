@@ -1,3 +1,4 @@
 #!/bin/bash
 tmux split-pane -h -d "sbt '~test'"
-nvim -c "tabnew | e src/test/scala"
+tmux rename-window "$(pwd | xargs basename)"
+nvim -c "tabnew | FZF"

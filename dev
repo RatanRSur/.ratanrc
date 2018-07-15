@@ -1,10 +1,9 @@
 #!/bin/bash
 cd ~
-tmux new-session -d -x $(stty size | cut -d ' ' -f 2) -y $(stty size | cut -d ' ' -f 1) 'cd ~/.ratanrc && nvim init.vim'
+tmux new-session -d "nvim"
 tmux split-window -h
 tmux send-keys 'cd .ratanrc && clear' Enter
 tmux rename-window '.ratanrc'
 tmux new-window -n stf
-tmux select-window -t stf
 tmux send-keys 'cd stf && clear' Enter
 tmux -2 attach-session -d
