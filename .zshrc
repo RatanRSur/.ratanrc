@@ -55,6 +55,9 @@ case $os in
             julia -e 'Pkg.update(); exit()' &&
             cabal update
         }
+        function notify {
+            osascript -e 'display notification "" with title "Command Finished"'
+        }
         #nasa apod stuff
         [ "$(ls -A ~/Pictures/apod | grep -v DS_store)" ] && echo "You have astronomy pictures for review!"
         #move to trash instead of deleting forever
