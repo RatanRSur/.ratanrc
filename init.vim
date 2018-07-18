@@ -252,6 +252,7 @@ let g:fzf_colors = { 'fg':      ['fg', 'Normal'],
 map <Leader>e :FZF<CR>
 map <Leader>f :FZF 
 map <Leader>b :Buffers<CR>
+map <Leader>l :Lines<CR>
 map <Leader>` :FZF ~<CR>
 map <Leader>% :FZF %:h<CR>
 nnoremap <silent> <Leader>v :call fzf#run({'down': '50%', 'sink': 'botright split' })<CR>
