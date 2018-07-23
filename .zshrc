@@ -48,7 +48,8 @@ case $os in
         #brew stuff
         alias brewup="brew update -all && brew upgrade"
         function update {
-            brewup &&
+            brew update -all &&
+            brew upgrade &&
             brew cask upgrade &&
             nvim -c 'PlugUpdate | q | q' &&
             tldr --update &&
