@@ -1,4 +1,4 @@
 #!/bin/bash
 tmux split-pane -h -d "sbt '~test'"
 tmux rename-window "$(pwd | xargs basename)"
-nvim -c "tabnew | FZF"
+nvim -c "tabnew | FZF src/test"
