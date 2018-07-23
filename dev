@@ -1,7 +1,13 @@
 #!/bin/bash
-cd ~
-tmux new-session -d -n ".ratanrc"
-tmux send-keys "cd .ratanrc; nvim" Enter
-tmux split-window -h -c ".ratanrc"
-tmux new-window -n stf -c "stf"
-tmux -2 attach-session -d
+if [ -z "$TMUX" ]; then #start tmux
+    cd ~
+    tmux new-session -d -n ".ratanrc"
+    tmux send-keys "cd .ratanrc; nvim" Enter
+    tmux split-window -h -c ".ratanrc"
+    tmux new-window -n stf -c "stf"
+    tmux -2 attach-session -d
+elif [ -e build.sbt ]; then #scala
+    tmux split-pane -h -d "sbt '~test'"
+    tmux rename-window "$(pwd | xargs basename)"
+    nvim -c "tabnew | FZF src/test"
+fi
