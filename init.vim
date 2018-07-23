@@ -24,7 +24,6 @@ Plug 'ap/vim-css-color', { 'for' : 'css'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'mileszs/ack.vim'
 Plug 'craigemery/vim-autotag'
 "testing zone
 Plug 'alvan/vim-closetag'
@@ -106,7 +105,7 @@ nnoremap <Leader>p :bp<CR>
 " comment and copy
 nnoremap <Leader>cp :let @i=@0<CR>:call NERDComment('n', "yank")<CR>p:let @0=@i<CR>
 
-nnoremap <Leader>g :Ack!<Space>
+nnoremap <Leader>g :Ag<CR>
 
 "search for visually selected test
 vnoremap // "iy/<C-R>i<CR>
